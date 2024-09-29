@@ -12,7 +12,7 @@ const HomePage = () => {
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 50 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 1 }}
     >
       <Box className="flex flex-col items-center justify-center h-screen bg-gray-100 p-4">
         <motion.img 
@@ -20,7 +20,7 @@ const HomePage = () => {
           alt='logo comunicação sem fronteiras' 
           className='w-[700px] h-auto'
           initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
+          animate={{ scale: 2 }}
           transition={{ duration: 0.8 }}
         />
         <Text fontSize="3xl" fontWeight="bold" className="text-center text-gray-900">
