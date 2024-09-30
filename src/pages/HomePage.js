@@ -14,11 +14,11 @@ const HomePage = () => {
       exit={{ opacity: 0, y: 50 }}
       transition={{ duration: 1 }}
     >
-      <Box className="flex flex-col items-center justify-center h-screen bg-gray-100 p-4">
+      <Box className="flex flex-col items-center justify-center h-screen p-4 overflow-y-hidden">
         <motion.img 
           src={logo} 
           alt='logo comunicação sem fronteiras' 
-          className='w-[700px] h-auto'
+          className='w-[500px] h-auto'
           initial={{ scale: 0 }}
           animate={{ scale: 2 }}
           transition={{ duration: 0.8 }}
@@ -27,7 +27,7 @@ const HomePage = () => {
           Bem-vindo!
         </Text>
         <Text fontSize="xl" className="text-center mt-4 text-gray-700">
-          Plataformas gratuitas para aprender inglês ao seu alcance.
+          Entre e descubra cursos de graça para o seu aprendizado de idiomas!
         </Text>
         <Button 
           colorScheme="teal" 
