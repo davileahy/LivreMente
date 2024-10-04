@@ -19,7 +19,7 @@ const About = () => {
         Sobre Nós
       </Heading>
       <Text fontSize="lg">
-        O Comunicação Sem Fronteiras tem como objetivo facilitar o acesso ao <strong>aprendizado</strong>. Reunindo varias plataformas, recursos e cursos de acesso <strong>gratuitos</strong> para impulsionar o seu aprendizado. <br /> <br /> Quer saber mais do Comunicação Sem Fronteiras? <br /> <Button as='a' href='/saiba_mais' colorScheme='teal' mt={4}> <InfoOutlineIcon mr={2}/> Saiba Mais </Button>
+        O Comunicação Sem Fronteiras tem como objetivo facilitar o acesso ao <strong>aprendizado</strong>. Reunindo varias plataformas, recursos e cursos de acesso <strong>gratuitos</strong> para impulsionar o seu aprendizado. <br /><Button as='a' href='/saiba_mais' colorScheme='teal' mt={4}> <InfoOutlineIcon mr={2}/> Saiba Mais </Button>
       </Text>
     </Box>
   );

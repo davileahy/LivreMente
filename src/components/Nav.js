@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Flex, Button, Link } from '@chakra-ui/react';
+import { Box, Flex, Button, Icon } from '@chakra-ui/react';
+import {BsJournalBookmarkFill, BsChatDots} from 'react-icons/bs'
 import { Link as ScrollLink } from 'react-scroll';
 import small_logo from '../assets/favicon.png'
 
@@ -14,12 +15,12 @@ const Navbar = () => {
         <Flex gap={10}>
           <ScrollLink to="sobre" smooth={true} duration={500} offset={-70}>
             <Button variant="link" color="#0D415D" size='lg' className='hover:scale-125 duration-[0.5s]'>
-              Sobre
+              Sobre <Icon as={BsChatDots} ml={2}/>
             </Button>
           </ScrollLink>
           <ScrollLink to="cursos" smooth={true} duration={500} offset={-70}>
             <Button variant="link" color="#0D415D" size='lg' className='hover:scale-125 duration-[0.5s]'>
-              Cursos
+              Cursos <Icon as={BsJournalBookmarkFill} ml={2}/>
             </Button>
           </ScrollLink>
         </Flex>
