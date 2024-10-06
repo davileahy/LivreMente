@@ -1,6 +1,6 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import MainPage from './pages/MainPage';
-import MorePage from './pages/MorePage';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import MorePage from "./pages/MorePage";
 
 function App() {
   return (
