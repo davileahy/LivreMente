@@ -16,6 +16,7 @@ Proporcionar um ponto de acesso único para plataformas de aprendizado de idioma
 
 ## Estrutura do Projeto
 
+```bash
 comunicacao-sem-fronteiras/
 ├── public/
 ├── src/
@@ -27,6 +28,7 @@ comunicacao-sem-fronteiras/
 ├── tailwind.config.js   # Configurações do Tailwind CSS
 ├── package.json         # Dependências e scripts
 └── README.md            # Documentação do projeto
+```
 
 ## Contato
 
