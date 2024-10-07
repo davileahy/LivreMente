@@ -19,10 +19,17 @@ import {
   BsBook,
   BsList,
 } from "react-icons/bs";
+
 import { Link as ScrollLink } from "react-scroll";
+import { useNavigate } from "react-router-dom";
+
 import small_logo from "../assets/favicon.png";
+import HomeButton from "./HomeButton";
 
 const Navbar = () => {
+  // Navigate para redirecionamento de página
+  const navigate = useNavigate();
+
   // Estado para controlar a abertura do drawer (menu mobile)
   const [isOpen, setIsOpen] = useState(false);
   const onClose = () => setIsOpen(false);
@@ -41,7 +48,7 @@ const Navbar = () => {
       className="fixed w-full z-10 shadow-md"
     >
       <Flex justify="space-between" align="center">
-        {/* Logo responsiva */}
+        {/* Logo responsiva que leva para o topo da página caso clicada */}
         <ScrollLink to="inicio" smooth={true} duration={500} offset={-70}>
           <img
             src={small_logo}
@@ -53,14 +60,21 @@ const Navbar = () => {
 
         {/* Links exibidos em telas maiores */}
         <Flex gap={10} display={displayLinks}>
+
+          {/* Leva para o topo da página quando estiver na metade ou abaixo */}
+          <HomeButton />
+          {/* Redireciona para BIBLIOTECA */}
           <Button
             variant="link"
             color="#0D415D"
             size="lg"
             className="hover:scale-125 duration-[0.5s]"
+            onClick={() => navigate('/biblioteca')}
           >
             Biblioteca <Icon as={BsBook} ml={2} />
           </Button>
+
+          {/* Desce a página para SOBRE */}
           <ScrollLink to="sobre" smooth={true} duration={500} offset={-70}>
             <Button
               variant="link"
@@ -71,16 +85,17 @@ const Navbar = () => {
               Sobre <Icon as={BsChatDots} ml={2} />
             </Button>
           </ScrollLink>
-          <ScrollLink to="cursos" smooth={true} duration={500} offset={-70}>
-            <Button
-              variant="link"
-              color="#0D415D"
-              size="lg"
-              className="hover:scale-125 duration-[0.5s]"
-            >
-              Cursos <Icon as={BsJournalBookmarkFill} ml={2} />
-            </Button>
-          </ScrollLink>
+
+          {/* Redireciona para CURSOS*/}
+          <Button
+            variant="link"
+            color="#0D415D"
+            size="lg"
+            className="hover:scale-125 duration-[0.5s]"
+            onClick={() => navigate('/cursos')}
+          >
+            Cursos <Icon as={BsJournalBookmarkFill} ml={2} />
+          </Button>
         </Flex>
 
         {/* Ícone do menu hamburguer para telas menores */}
@@ -105,50 +120,21 @@ const Navbar = () => {
 
             <DrawerBody>
               <Flex direction="column" gap={4}>
-                <ScrollLink
-                  to="inicio"
-                  smooth={true}
-                  duration={500}
-                  offset={-70}
-                  onClick={onClose}
-                >
-                  <Button variant="link" color="#0D415D" size="lg">
-                    Início
-                  </Button>
-                </ScrollLink>
-                <ScrollLink
-                  to="biblioteca"
-                  smooth={true}
-                  duration={500}
-                  offset={-70}
-                  onClick={onClose}
-                >
-                  <Button variant="link" color="#0D415D" size="lg">
-                    Biblioteca <Icon as={BsBook} ml={2} />
-                  </Button>
-                </ScrollLink>
-                <ScrollLink
-                  to="sobre"
-                  smooth={true}
-                  duration={500}
-                  offset={-70}
-                  onClick={onClose}
-                >
-                  <Button variant="link" color="#0D415D" size="lg">
-                    Sobre <Icon as={BsChatDots} ml={2} />
-                  </Button>
-                </ScrollLink>
-                <ScrollLink
-                  to="cursos"
-                  smooth={true}
-                  duration={500}
-                  offset={-70}
-                  onClick={onClose}
-                >
-                  <Button variant="link" color="#0D415D" size="lg">
-                    Cursos <Icon as={BsJournalBookmarkFill} ml={2} />
-                  </Button>
-                </ScrollLink>
+                <Button variant="link" color="#0D415D" size="lg">
+                  Início
+                </Button>
+
+                <Button variant="link" color="#0D415D" size="lg">
+                  Biblioteca <Icon as={BsBook} ml={2} />
+                </Button>
+
+                <Button variant="link" color="#0D415D" size="lg">
+                  Sobre <Icon as={BsChatDots} ml={2} />
+                </Button>
+
+                <Button variant="link" color="#0D415D" size="lg">
+                  Cursos <Icon as={BsJournalBookmarkFill} ml={2} />
+                </Button>
               </Flex>
             </DrawerBody>
           </DrawerContent>
