@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading, Img } from "@chakra-ui/react";
+import { Box, Img } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import About from "../components/About";
 import Courses from "../components/Courses";

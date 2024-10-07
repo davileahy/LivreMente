@@ -6,7 +6,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route path="/" element={<MainPage />} index/>
         <Route path="/inicio" element={<MainPage />} />
         <Route path="/saiba_mais" element={<MorePage />} />
         {/* Adicionar outras rotas para diferentes páginas */}

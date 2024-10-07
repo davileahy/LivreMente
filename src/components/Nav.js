@@ -1,6 +1,24 @@
 import React, { useState } from "react";
-import { Box, Flex, Button, Icon, useBreakpointValue, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, DrawerCloseButton, IconButton } from "@chakra-ui/react";
-import { BsJournalBookmarkFill, BsChatDots, BsBook, BsList } from "react-icons/bs";
+import {
+  Box,
+  Flex,
+  Button,
+  Icon,
+  useBreakpointValue,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  IconButton,
+} from "@chakra-ui/react";
+import {
+  BsJournalBookmarkFill,
+  BsChatDots,
+  BsBook,
+  BsList,
+} from "react-icons/bs";
 import { Link as ScrollLink } from "react-scroll";
 import small_logo from "../assets/favicon.png";
 
@@ -15,7 +33,13 @@ const Navbar = () => {
   const displayLinks = useBreakpointValue({ base: "none", md: "flex" });
 
   return (
-    <Box as="nav" bg="white" py={4} px={6} className="fixed w-full z-10 shadow-md">
+    <Box
+      as="nav"
+      bg="white"
+      py={4}
+      px={6}
+      className="fixed w-full z-10 shadow-md"
+    >
       <Flex justify="space-between" align="center">
         {/* Logo responsiva */}
         <ScrollLink to="inicio" smooth={true} duration={500} offset={-70}>
@@ -81,22 +105,46 @@ const Navbar = () => {
 
             <DrawerBody>
               <Flex direction="column" gap={4}>
-                <ScrollLink to="inicio" smooth={true} duration={500} offset={-70} onClick={onClose}>
+                <ScrollLink
+                  to="inicio"
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  onClick={onClose}
+                >
                   <Button variant="link" color="#0D415D" size="lg">
                     Início
                   </Button>
                 </ScrollLink>
-                <ScrollLink to="biblioteca" smooth={true} duration={500} offset={-70} onClick={onClose}>
+                <ScrollLink
+                  to="biblioteca"
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  onClick={onClose}
+                >
                   <Button variant="link" color="#0D415D" size="lg">
                     Biblioteca <Icon as={BsBook} ml={2} />
                   </Button>
                 </ScrollLink>
-                <ScrollLink to="sobre" smooth={true} duration={500} offset={-70} onClick={onClose}>
+                <ScrollLink
+                  to="sobre"
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  onClick={onClose}
+                >
                   <Button variant="link" color="#0D415D" size="lg">
                     Sobre <Icon as={BsChatDots} ml={2} />
                   </Button>
                 </ScrollLink>
-                <ScrollLink to="cursos" smooth={true} duration={500} offset={-70} onClick={onClose}>
+                <ScrollLink
+                  to="cursos"
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  onClick={onClose}
+                >
                   <Button variant="link" color="#0D415D" size="lg">
                     Cursos <Icon as={BsJournalBookmarkFill} ml={2} />
                   </Button>

@@ -7,18 +7,10 @@ import {
   Wrap,
   WrapItem,
   Tag,
-  Checkbox,
-  CheckboxGroup,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  IconButton,
 } from "@chakra-ui/react";
-import { SearchIcon, DeleteIcon } from "@chakra-ui/icons";
+import { AddIcon } from "@chakra-ui/icons";
 import CourseCard from "./CourseCard";
-import { link, title } from "framer-motion/client";
 
 //logos
 import logo_duolingo from "../assets/courses_logos/duolingo_logo.png";
@@ -29,6 +21,8 @@ import logo_anki from "../assets/courses_logos/anki_logo.png";
 import logo_fl from "../assets/courses_logos/fl_logo.png";
 import logo_tandem from "../assets/courses_logos/tandem_logo.png";
 import logo_lingq from "../assets/courses_logos/lingq_logo.png";
+import { useNavigate } from "react-router-dom";
+import FilterMenu from "./FilterMenu";
 
 // Exemplo de array com os dados dos cursos
 const coursesData = [
@@ -123,6 +117,9 @@ const coursesData = [
 ];
 
 const Courses = () => {
+  // navigate
+  const navigate = useNavigate();
+
   // Estado para tags selecionadas
   const [selectedTags, setSelectedTags] = useState([]);
 
@@ -151,45 +148,23 @@ const Courses = () => {
           Nossa seleção de plataformas de cursos para impulsionar o seu
           aprendizado.
         </Text>
+        <Button
+          variant={"solid"}
+          colorScheme="green"
+          leftIcon={<AddIcon />}
+          mt={2}
+          as={"a"}
+          onClick={() => navigate("/courses")}
+        >
+          Ver Todos
+        </Button>
         {/* Dropdown de filtros na lateral */}
         <Box w={{ base: "100%", md: "20%" }} mb={{ base: 4, md: 0 }}>
-          <Menu closeOnSelect={false}>
-            <MenuButton
-              as={Button}
-              aria-label="Filtros"
-              size="sm"
-              w="100%"
-              colorScheme="teal"
-            >
-              <SearchIcon></SearchIcon>
-            </MenuButton>
-
-            <MenuList minWidth="240px">
-              <CheckboxGroup value={selectedTags} onChange={handleTagChange}>
-                <MenuItem closeOnSelect={false}>
-                  <Checkbox value="Inglês">Inglês</Checkbox>
-                </MenuItem>
-                <MenuItem closeOnSelect={false}>
-                  <Checkbox value="Iniciantes">Iniciantes</Checkbox>
-                </MenuItem>
-                <MenuItem closeOnSelect={false}>
-                  <Checkbox value="Certificado">Certificado</Checkbox>
-                </MenuItem>
-                <MenuItem closeOnSelect={false}>
-                  <Checkbox value="Intermediário">Intermediário</Checkbox>
-                </MenuItem>
-                <MenuItem closeOnSelect={false}>
-                  <Checkbox value="Gratuito">Gratuito</Checkbox>
-                </MenuItem>
-              </CheckboxGroup>
-              {/* Botão para limpar todas as tags */}
-              <MenuItem>
-                <Button size="sm" onClick={clearTags} w="100%">
-                  <DeleteIcon />
-                </Button>
-              </MenuItem>
-            </MenuList>
-          </Menu>
+          <FilterMenu
+            selectedTags={selectedTags}
+            handleTagChange={handleTagChange}
+            clearTags={clearTags}
+          />
         </Box>
         {/* Exibição das tags selecionadas */}
         <Wrap spacing={4} mb={4} mt={5}>
