@@ -17,13 +17,13 @@ import {
   BsCodeSquare,
   BsLinkedin,
   BsCheck2Circle,
-  BsFillHouseFill,
   BsEnvelope,
 } from "react-icons/bs";
 import { motion } from "framer-motion";
 
 import foto_ilana from "../assets/developers_images/foto_ilana.jpeg";
 import foto_davi from "../assets/developers_images/foto_davi.jpeg";
+import HomeButton from "../components/HomeButton";
 
 const MorePage = () => {
   const navigate = useNavigate();
@@ -36,17 +36,7 @@ const MorePage = () => {
       className="flex justify-center items-center"
     >
       <VStack spacing={10} align="start" className="w-full max-w-4xl mx-auto">
-        {/* Botão fixo para navegação de volta à homepage */}
-        <Button
-          colorScheme="teal"
-          variant="outline"
-          position="fixed"
-          top="10px"
-          right="10px"
-          onClick={() => navigate("/inicio")}
-        >
-          <Icon as={BsFillHouseFill} />
-        </Button>
+        <HomeButton />
 
         {/* Animação do título */}
         <motion.div
@@ -139,7 +129,8 @@ const MorePage = () => {
                 />
                 <Box ml={4}>
                   <Text fontSize="lg" color="#34495E">
-                    <Icon as={BsCodeSquare} mx={1} /> Davi Leahy - Desenvolvimento Web
+                    <Icon as={BsCodeSquare} mx={1} /> Davi Leahy -
+                    Desenvolvimento Web
                   </Text>
                   <Box display="flex" alignItems="center">
                     <Button
