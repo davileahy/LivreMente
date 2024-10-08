@@ -57,6 +57,7 @@ const Courses = () => {
           mt={2}
           as={"a"}
           onClick={() => navigate("/courses")}
+          className="hover:cursor-pointer"
         >
           Ver Todos
         </Button>
