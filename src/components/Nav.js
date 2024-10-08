@@ -75,16 +75,15 @@ const Navbar = () => {
           </Button>
 
           {/* Desce a página para SOBRE */}
-          <ScrollLink to="sobre" smooth={true} duration={500} offset={-70}>
-            <Button
-              variant="link"
-              color="#0D415D"
-              size="lg"
-              className="hover:scale-125 duration-[0.5s]"
-            >
-              Sobre <Icon as={BsChatDots} ml={2} />
-            </Button>
-          </ScrollLink>
+          <Button
+            variant="link"
+            color="#0D415D"
+            size="lg"
+            className="hover:scale-125 duration-[0.5s]"
+            onClick={() => navigate('/saiba_mais')}
+          >
+            Sobre <Icon as={BsChatDots} ml={2} />
+          </Button>
 
           {/* Redireciona para CURSOS*/}
           <Button
@@ -120,19 +119,19 @@ const Navbar = () => {
 
             <DrawerBody>
               <Flex direction="column" gap={4}>
-                <Button variant="link" color="#0D415D" size="lg">
+                <Button variant="link" color="#0D415D" size="lg" onClick={() => navigate('/inicio')}>
                   Início
                 </Button>
 
-                <Button variant="link" color="#0D415D" size="lg">
+                <Button variant="link" color="#0D415D" size="lg" onClick={() => navigate('/biblioteca')}>
                   Biblioteca <Icon as={BsBook} ml={2} />
                 </Button>
 
-                <Button variant="link" color="#0D415D" size="lg">
+                <Button variant="link" color="#0D415D" size="lg" onClick={() => navigate('/saiba_mais') }>
                   Sobre <Icon as={BsChatDots} ml={2} />
                 </Button>
 
-                <Button variant="link" color="#0D415D" size="lg">
+                <Button variant="link" color="#0D415D" size="lg" onClick={() => navigate('/cursos')}>
                   Cursos <Icon as={BsJournalBookmarkFill} ml={2} />
                 </Button>
               </Flex>

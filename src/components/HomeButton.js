@@ -16,8 +16,6 @@ const HomeButton = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(location.pathname)
-
   // Verifica se o usuário está na homepage
   const isHomePage =
     location.pathname === "/" || location.pathname === "/inicio";
@@ -29,7 +27,6 @@ const HomeButton = () => {
 
   // Verifica se o usuário está na metade da página com relação ao scroll
   const scrollPos = useScrollPosition();
-  console.log(scrollPos)
   const isAtHalfPage = scrollPos >= document.documentElement.scrollHeight / 2;
 
   return (
@@ -51,10 +48,10 @@ const HomeButton = () => {
         // Botão fixo para ir para a home
         !isHomePage && (
             <Button
-            colorScheme="teal"
-            variant="outline"
+            colorScheme="blackAlpha"
+            variant="solid"
             position="fixed"
-            top="20px"
+            bottom="20px"
             right="20px"
             onClick={() => navigate("/inicio")}
             size={"lg"}

@@ -28,7 +28,7 @@ const CourseCard = ({ title, logo, description, categories, link }) => {
       whileHover="hover"
       viewport={{ once: true, amount: 0.2 }}
       variants={cardAnimation}
-      className="p-6 shadow-lg bg-white transition-transform transform hover:scale-105 duration-[0.5s]"
+      className="p-6 shadow-lg bg-white transition-transform transform hover:scale-105 duration-[0.2s]"
       w="100%"
       maxW={{ base: "100%", md: "700px" }} // Responsivo, se adapta ao tamanho da tela
       borderRadius="50px"

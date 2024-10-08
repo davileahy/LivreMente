@@ -56,7 +56,7 @@ const Courses = () => {
           leftIcon={<AddIcon />}
           mt={2}
           as={"a"}
-          onClick={() => navigate("/courses")}
+          onClick={() => navigate("/cursos")}
           className="hover:cursor-pointer"
         >
           Ver Todos

@@ -7,8 +7,10 @@ import {
   MenuList,
   MenuItem,
   Button,
+  Icon,
 } from "@chakra-ui/react";
-import { SearchIcon, DeleteIcon } from "@chakra-ui/icons";
+import {BsFilter } from 'react-icons/bs'
+import { DeleteIcon } from "@chakra-ui/icons";
 
 // Componente reutilizável para o menu de filtros
 const FilterMenu = ({ selectedTags, handleTagChange, clearTags }) => {
@@ -17,11 +19,12 @@ const FilterMenu = ({ selectedTags, handleTagChange, clearTags }) => {
       <MenuButton
         as={Button}
         aria-label="Filtros"
-        size="sm"
+        size="lg"
         w="100%"
-        colorScheme="teal"
+        color={"white"}
+        borderRadius={'50px'}
       >
-        <SearchIcon />
+        <Icon as={BsFilter } color={'#0F5A4E'} boxSize={8} />
       </MenuButton>
 
       <MenuList minWidth="240px">

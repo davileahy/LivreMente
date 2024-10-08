@@ -17,9 +17,16 @@ import {
   Link,
   useDisclosure,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 const MiniCourseCard = ({ title, logo, description, categories, link }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // Animação para o modal
+  const modalAnimation = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 },
+  };
 
   return (
     <>
@@ -28,10 +35,12 @@ const MiniCourseCard = ({ title, logo, description, categories, link }) => {
         as="button"
         onClick={onOpen}
         borderWidth="1px"
-        borderRadius="lg"
+        borderRadius={30}
+        background={"white"}
+        p={3}
         overflow="hidden"
         cursor="pointer"
-        boxSize="150px" // Mantém o quadrado
+        boxSize={{ base: "120px", md: "150px" }} // Responsivo
         display="flex"
         alignItems="center"
         justifyContent="center"
@@ -39,16 +48,24 @@ const MiniCourseCard = ({ title, logo, description, categories, link }) => {
         _hover={{ boxShadow: "xl", transform: "scale(1.05)" }}
         transition="transform 0.2s ease-in-out"
       >
-        <Image src={logo} alt={`${title} logo`} maxH="90%" maxW="90%" />
+        <Image src={logo} alt={`${title} logo`} maxH="90%" maxW="90%" borderRadius={'20px'} />
       </Box>
 
       {/* Modal com as informações detalhadas */}
-      <Modal isOpen={isOpen} onClose={onClose} isCentered size="lg">
+      <Modal isOpen={isOpen} onClose={onClose} isCentered size={{ base: "sm", md: "lg" }}>
         <ModalOverlay />
-        <ModalContent>
+        <ModalContent
+          as={motion.div}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          variants={modalAnimation}
+          transition={{ duration: 0.3 }}
+        >
           <ModalHeader>{title}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
+            <Image src={logo} alt={`${title} logo`} mb={4} borderRadius={'50px'} />
             <Text mb={4}>{description}</Text>
 
             {/* Exibição das categorias */}
@@ -61,8 +78,8 @@ const MiniCourseCard = ({ title, logo, description, categories, link }) => {
             </Wrap>
 
             {/* Link para o curso */}
-            <Link href={link} isExternal color="teal.500">
-              Acesse o curso
+            <Link href={link} isExternal color="green" fontSize={"lg"}>
+              Acessar
             </Link>
           </ModalBody>
 

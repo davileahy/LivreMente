@@ -23,6 +23,7 @@ import { motion } from "framer-motion";
 
 import foto_ilana from "../assets/developers_images/foto_ilana.jpeg";
 import foto_davi from "../assets/developers_images/foto_davi.jpeg";
+import fundo from "../assets/csf_bolas.png"
 import HomeButton from "../components/HomeButton";
 
 const MorePage = () => {
@@ -34,6 +35,10 @@ const MorePage = () => {
       bg="#f9f9f9"
       minH="100vh"
       className="flex justify-center items-center"
+      backgroundPosition={"center"}
+      backgroundRepeat={"repeat-x"}
+      backgroundImage={fundo}
+      backgroundColor={'teal'}
     >
       <VStack spacing={10} align="start" className="w-full max-w-4xl mx-auto">
         <HomeButton />
@@ -49,7 +54,6 @@ const MorePage = () => {
             size="2xl"
             color="#2C3E50"
             textAlign="center"
-            mt={20}
           >
             Saiba Mais!
           </Heading>
@@ -188,10 +192,11 @@ const MorePage = () => {
         >
           <Box display="flex" justifyContent="center" mt={8}>
             <Button
-              colorScheme="teal"
+              colorScheme="blackAlpha"
               size="lg"
               onClick={() => navigate("/inicio")}
               alignSelf={"center"}
+              variant={'solid'}
             >
               <ArrowBackIcon /> Voltar para a página inicial
             </Button>
