@@ -10,7 +10,7 @@ function App() {
         <Route path="/" element={<MainPage />} index/>
         <Route path="/inicio" element={<MainPage />} />
         <Route path="/saiba_mais" element={<MorePage />} />
-        <Route path="/courses" element={<AllCoursesPage />} />
+        <Route path="/cursos" element={<AllCoursesPage />} />
         {/* Adicionar outras rotas para diferentes páginas */}
       </Routes>
     </Router>
