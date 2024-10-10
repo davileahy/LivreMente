@@ -15,7 +15,7 @@ import { DeleteIcon } from "@chakra-ui/icons";
 // Componente reutilizável para o menu de filtros
 const FilterMenu = ({ selectedTags, handleTagChange, clearTags }) => {
   return (
-    <Menu closeOnSelect={false}>
+    <Menu closeOnSelect={false} textAlign={'center'}>
       <MenuButton
         as={Button}
         aria-label="Filtros"
@@ -23,6 +23,8 @@ const FilterMenu = ({ selectedTags, handleTagChange, clearTags }) => {
         w="100%"
         color={"white"}
         borderRadius={'50px'}
+        className='z-10'
+        textAlign={'center'}
       >
         <Icon as={BsFilter } color={'#0F5A4E'} boxSize={8} />
       </MenuButton>

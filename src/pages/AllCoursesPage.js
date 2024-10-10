@@ -1,16 +1,58 @@
-import React, { useState } from "react";
-import { Box, Flex, Wrap, WrapItem, Tag, Button } from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
+import {
+  Box,
+  Flex,
+  Wrap,
+  WrapItem,
+  Tag,
+  Button,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
+} from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import FilterMenu from "../components/FilterMenu";
 import MiniCourseCard from "../components/MiniCourseCard";
 import coursesData from "../data/coursesData";
 import Navbar from "../components/Nav";
-import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
-import fundo from "../assets/fundo.png";
+import { ArrowBackIcon, ArrowForwardIcon, CloseIcon } from "@chakra-ui/icons";
+// import fundo from "../assets/fundo.png";
 
 const ITEMS_PER_PAGE = 12; // 2 rows * 6 columns
 
 const AllCoursesPage = () => {
+  // Estado para verificar se o alert é visivel
+  const [isAlertVisible, setIsAlertVisible] = useState(false);
+
+  // useEffect para verificar o tamanho da tela do usuário e exibir um alerta.
+  useEffect(() => {
+    const checkScreenSize = () => {
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+
+      // Defina o tamanho mínimo desejado
+      const minWidth = 768; // por exemplo, 768px
+      const minHeight = 600; // por exemplo, 600px
+
+      if (screenWidth < minWidth || screenHeight < minHeight) {
+        setIsAlertVisible(true);
+      } else {
+        setIsAlertVisible(false);
+      }
+    };
+
+    checkScreenSize();
+
+    // Adiciona um listener para mudanças de tamanho da tela
+    window.addEventListener("resize", checkScreenSize);
+
+    // Limpeza do listener ao desmontar o componente
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
+
   const [selectedTags, setSelectedTags] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -61,12 +103,31 @@ const AllCoursesPage = () => {
   return (
     <Box
       h="100vh"
-      backgroundColor={'teal'} 
+      backgroundColor={"teal"}
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
       overflow="hidden"
     >
+      {isAlertVisible && (
+        <Alert status="info">
+          <AlertIcon />
+          <AlertTitle>Sua tela é pequena!</AlertTitle>
+          <AlertDescription>
+            Tente rolar para o lado para ver todos os cursos ;)
+          </AlertDescription>
+          <Button
+            variant={"ghost"}
+            size={"sm"}
+            p={2}
+            m={2}
+            onClick={() => setIsAlertVisible(false)}
+          >
+            <CloseIcon />
+          </Button>
+        </Alert>
+      )}
+
       <Navbar />
       <Flex
         direction="column"
@@ -75,7 +136,7 @@ const AllCoursesPage = () => {
         h="100%"
       >
         {/* Componente de filtro */}
-        <div className="w-[7vw] p-2">
+        <div>
           <FilterMenu
             selectedTags={selectedTags}
             handleTagChange={handleTagChange}
