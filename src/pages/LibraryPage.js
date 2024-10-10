@@ -1,106 +1,109 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
+import { Box, Spinner, Text, SimpleGrid } from "@chakra-ui/react";
+import BookCard from "../components/BookCard";
 import axios from "axios";
-import {
-  Box,
-  Text,
-  Image,
-  Heading,
-  Grid,
-  GridItem,
-  Spinner,
-  Alert,
-  AlertIcon,
-} from "@chakra-ui/react";
-
-// URL da API e chave sendo acessadas de variáveis de ambiente
-const API_URL = process.env.REACT_APP_BOOKS_API_URL; // URL da API no .env
-const API_KEY = process.env.REACT_APP_BOOKS_API_KEY; // Chave da API no .env
+import SearchBar from "../components/SearchBar";
 
 const LibraryPage = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
+  const [query, setQuery] = useState("");
+  const [filteredBooks, setFilteredBooks] = useState([]);
 
-  // Função para buscar os livros da API
-  const fetchBooks = async () => {
-    try {
-      const response = await axios.get(API_URL, {
-        params: {
-          key: API_KEY, // Passando a chave da API nos parâmetros
-        },
-      });
-      setBooks(response.data.items); // Assumindo que os livros vêm no campo "items"
-      setLoading(false);
-    } catch (err) {
-      setError("Erro ao carregar os livros");
-      setLoading(false);
-    }
-  };
-
-  // Chama a função de busca quando o componente monta
   useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const api_key = process.env.REACT_APP_GOOGLE_BOOKS_API_KEY;
+        const url = `https://www.googleapis.com/books/v1/volumes?q=subject:educacao&key=${api_key}`;
+
+        const response = await axios.get(url);
+
+        // Verifique a resposta da API
+        console.log("API Response:", response.data);
+
+        if (response.data && response.data.items) {
+          setBooks(response.data.items);
+          setFilteredBooks(response.data.items); // Inicialmente, todos os livros estão filtrados
+        } else {
+          setError("Nenhum livro encontrado.");
+        }
+      } catch (err) {
+        setError("Erro ao carregar livros: " + err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchBooks();
   }, []);
 
-  // Retorna enquanto os dados estão sendo carregados
-  if (loading) {
-    return (
-      <Box display="flex" justifyContent="center" alignItems="center" h="100vh">
-        <Spinner size="xl" />
-      </Box>
-    );
-  }
+  // Função para filtrar livros com base na consulta
+  const handleSearch = useCallback(() => {
+    const lowerCaseQuery = query.toLowerCase();
+    const newFilteredBooks = books.filter((book) => {
+      const title = book.volumeInfo.title.toLowerCase();
+      const description = book.volumeInfo.description
+        ? book.volumeInfo.description.toLowerCase()
+        : "";
+      const categories = book.volumeInfo.categories || [];
 
-  // Caso haja erro, exibe uma mensagem de alerta
-  if (error) {
-    return (
-      <Box display="flex" justifyContent="center" alignItems="center" h="100vh">
-        <Alert status="error">
-          <AlertIcon />
-          {error}
-        </Alert>
-      </Box>
-    );
-  }
+      // Verifique os dados de filtragem
+      console.log({ title, description, categories });
+
+      const matchesTitle = title.includes(lowerCaseQuery);
+      const matchesDescription = description.includes(lowerCaseQuery);
+      const matchesCategory = categories.some((category) =>
+        category.toLowerCase().includes("educação") ||
+        category.toLowerCase().includes("ensino")
+      );
+
+      console.log({ matchesTitle, matchesDescription, matchesCategory }); // Para depuração
+      return (matchesTitle || matchesDescription) && matchesCategory;
+    });
+
+    console.log("Filtered Books:", newFilteredBooks); // Para verificar quais livros estão sendo filtrados
+    setFilteredBooks(newFilteredBooks);
+  }, [books, query]);
+
+  useEffect(() => {
+    handleSearch();
+  }, [query, handleSearch]);
 
   return (
-    <Box p={8}>
-      <Heading as="h1" size="xl" textAlign="center" mb={6}>
-        Biblioteca de Livros de Ensino de Inglês
-      </Heading>
-      <Grid templateColumns="repeat(auto-fill, minmax(250px, 1fr))" gap={6}>
-        {books.map((book, index) => (
-          <GridItem
-            key={index}
-            borderWidth="1px"
-            borderRadius="lg"
-            overflow="hidden"
-            p={4}
-            boxShadow="md"
-            transition="transform 0.2s ease-in-out"
-            _hover={{ transform: "scale(1.05)" }}
-          >
-            <Image
-              src={book.volumeInfo.imageLinks?.thumbnail || "/no-image.jpg"}
-              alt={book.volumeInfo.title}
-              borderRadius="md"
-              mb={4}
-              w="100%"
-              h="300px"
-              objectFit="cover"
+    <Box p={5}>
+      <SearchBar 
+        query={query} 
+        setQuery={setQuery} 
+        onSearch={handleSearch} 
+      />
+
+      {loading && (
+        <Box display="flex" justifyContent="center">
+          <Spinner size="xl" />
+        </Box>
+      )}
+      {error && (
+        <Text color="red.500" textAlign="center" mt={4}>
+          {error}
+        </Text>
+      )}
+      {!loading && !error && (
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={6}>
+          {filteredBooks.map((book) => (
+            <BookCard
+              key={book.id}
+              title={book.volumeInfo.title}
+              authors={book.volumeInfo.authors}
+              thumbnail={
+                book.volumeInfo.imageLinks?.thumbnail ||
+                "https://via.placeholder.com/150"
+              }
+              description={book.volumeInfo.description}
             />
-            <Heading as="h3" size="md" mb={2}>
-              {book.volumeInfo.title}
-            </Heading>
-            <Text fontSize="sm" color="gray.600">
-              {book.volumeInfo.authors?.join(", ")}
-            </Text>
-            <Text fontSize="sm" mt={2} noOfLines={3}>
-              {book.volumeInfo.description || "Sem descrição disponível."}
-            </Text>
-          </GridItem>
-        ))}
-      </Grid>
+          ))}
+        </SimpleGrid>
+      )}
     </Box>
   );
 };
