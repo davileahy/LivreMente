@@ -1,32 +1,29 @@
 import React from "react";
-import { Input, InputGroup, InputLeftElement, Button, Select } from "@chakra-ui/react";
+import { Input, InputGroup, InputLeftElement, Button } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 
-const SearchBar = ({ query, setQuery, onSearch, selectedCategory, setSelectedCategory }) => {
+const SearchBar = ({ query, setQuery, onSearch }) => {
   const handleInputChange = (event) => {
     setQuery(event.target.value);
   };
 
-  const handleCategoryChange = (event) => {
-    setSelectedCategory(event.target.value);
-  };
-
   return (
     <InputGroup mb={4}>
-      <InputLeftElement children={<SearchIcon color="gray.300" />} />
+      <InputLeftElement children={<SearchIcon color="#0F5A4E" />} />
       <Input
+        backgroundColor={'white'}
         placeholder="Pesquisar livros"
         value={query}
         onChange={handleInputChange}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            onSearch();
+          }
+        }}
       />
-      <Select placeholder="Selecionar categoria" onChange={handleCategoryChange} ml={2}>
-        <option value="educacao">Educação</option>
-        <option value="linguagem">Linguagem</option>
-        <option value="ensino">Ensino</option>
-        <option value="idiomas">Idiomas</option>
-        <option value="cursos">Cursos</option>
-      </Select>
-      <Button onClick={onSearch} ml={2}>Buscar</Button>
+      <Button onClick={onSearch} ml={2}>
+        Buscar
+      </Button>
     </InputGroup>
   );
 };

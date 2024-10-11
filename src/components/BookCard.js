@@ -15,6 +15,7 @@ const BookCard = ({ title, authors, thumbnail, description, infoLink }) => {
         _hover={{ boxShadow: "xl", transform: "scale(1.05)", cursor: "pointer" }}
         transition="transform 0.2s ease-in-out"
         onClick={onOpen}
+        backgroundColor={'white'}
       >
         <Box display="flex" justifyContent="center">
           <Image

@@ -23,7 +23,6 @@ import { motion } from "framer-motion";
 
 import foto_ilana from "../assets/developers_images/foto_ilana.jpeg";
 import foto_davi from "../assets/developers_images/foto_davi.jpeg";
-import fundo from "../assets/csf_bolas.png"
 import HomeButton from "../components/HomeButton";
 
 const MorePage = () => {
@@ -36,8 +35,6 @@ const MorePage = () => {
       minH="100vh"
       className="flex justify-center items-center"
       backgroundPosition={"center"}
-      backgroundRepeat={"repeat-x"}
-      backgroundImage={fundo}
       backgroundColor={'teal'}
     >
       <VStack spacing={10} align="start" className="w-full max-w-4xl mx-auto">

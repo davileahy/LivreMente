@@ -136,7 +136,7 @@ const AllCoursesPage = () => {
         h="100%"
       >
         {/* Componente de filtro */}
-        <div>
+        <div className="mt-5">
           <FilterMenu
             selectedTags={selectedTags}
             handleTagChange={handleTagChange}

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import {
   Box,
   Spinner,
@@ -9,10 +10,14 @@ import {
   Flex,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import BookCard from "../components/BookCard";
-import axios from "axios";
-import SearchBar from "../components/SearchBar";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
+
+import fundo from "../assets/fundo.png";
+import placeholder from "../assets/placeholder.jpg";
+
+import BookCard from "../components/BookCard";
+import SearchBar from "../components/SearchBar";
+import Navbar from "../components/Nav";
 
 const LibraryPage = () => {
   const [books, setBooks] = useState([]);
@@ -80,70 +85,84 @@ const LibraryPage = () => {
   const gridColumns = useBreakpointValue({ base: 1, sm: 2, md: 3 });
 
   return (
-    <Box p={5}>
-      {/* Barra de busca */}
-      <SearchBar query={query} setQuery={setQuery} onSearch={handleSearch} />
+    <Box
+      backgroundImage={fundo}
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
+      backgroundSize="cover"
+      overflow="hidden"
+    >
+      {/* Navbar fixa no topo */}
+      <Navbar />
 
-      {/* Filtro de categoria */}
-      <Select
-        placeholder="Selecione uma categoria"
-        mt={4}
-        onChange={(e) => setSelectedCategory(e.target.value)}
-        maxW="300px"
-        mx="auto"
-      >
-        <option value="linguagem">Linguagem</option>
-        <option value="ensino">Ensino</option>
-        <option value="educacao infantil">Educação Infantil</option>
-      </Select>
-
-      {/* Spinner de carregamento */}
-      {loading && (
-        <Flex justifyContent="center" mt={6}>
-          <Spinner size="xl" />
-        </Flex>
-      )}
-
-      {/* Mensagem de erro */}
-      {error && (
-        <Text color="red.500" textAlign="center" mt={6}>
-          {error}
-        </Text>
-      )}
-
-      {/* Grid de livros */}
-      {!loading && !error && (
-        <>
-          <SimpleGrid columns={gridColumns} spacing={6} mt={6}>
-            {filteredBooks.map((book) => (
-              <BookCard
-                key={book.id}
-                title={book.volumeInfo.title}
-                authors={book.volumeInfo.authors}
-                thumbnail={
-                  book.volumeInfo.imageLinks?.thumbnail ||
-                  "https://via.placeholder.com/150"
-                }
-                description={book.volumeInfo.description}
-                infoLink={book.volumeInfo.infoLink}
-              />
-            ))}
-          </SimpleGrid>
-
-          {/* Paginação */}
-          <Flex justifyContent="center" mt={6}>
-            {currentPage > 0 && (
-              <Button onClick={() => handlePageChange(currentPage - 1)} mr={2}>
-                <ArrowBackIcon /> {/* Anterior */}
-              </Button>
-            )}
-            {currentPage + 1}
-            <Button onClick={() => handlePageChange(currentPage + 1)} ml={2}>
-              <ArrowForwardIcon /> {/* Próxima */}
-            </Button>
+      <Box pt={{ base: "100px", md: "120px" }} px={4}>
+        {/* Barra de busca */}
+        <SearchBar query={query} setQuery={setQuery} onSearch={handleSearch} />
+        {/* Filtro de categoria */}
+        <Select
+          backgroundColor={"white"}
+          placeholder="Selecione uma categoria"
+          mt={4}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+          maxW="300px"
+          mx="auto"
+        >
+          <option value="linguagem">Linguagem</option>
+          <option value="ensino">Ensino</option>
+          <option value="idiomas">Idiomas</option>
+          <option value="programacao">Programação</option>
+          <option value="trabalho">Trabalho</option>
+          <option value="medicina">Medicina</option>
+          <option value="ciencias">Ciências</option>
+          <option value="educacao infantil">Educação Infantil</option>
+        </Select>
+        {/* Spinner de carregamento */}
+        {loading && (
+          <Flex justifyContent="center" mt={6} height={"100vh"}>
+            <Spinner size="xl" />
           </Flex>
-        </>
-      )}
+        )}
+        {/* Mensagem de erro */}
+        {error && (
+          <Text color="red.500" textAlign="center" mt={6}>
+            {error}
+          </Text>
+        )}
+        {/* Grid de livros */}
+        {!loading && !error && (
+          <>
+            <SimpleGrid columns={gridColumns} spacing={6} mt={6}>
+              {filteredBooks.map((book) => (
+                <BookCard
+                  key={book.id}
+                  title={book.volumeInfo.title}
+                  authors={book.volumeInfo.authors}
+                  thumbnail={
+                    book.volumeInfo.imageLinks?.thumbnail || placeholder
+                  }
+                  description={book.volumeInfo.description}
+                  infoLink={book.volumeInfo.infoLink}
+                />
+              ))}
+            </SimpleGrid>
+            {/* Paginação */}
+            <Flex justifyContent="center" mt={6} mb={6}>
+              {currentPage > 0 && (
+                <Button
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  mr={2}
+                >
+                  <ArrowBackIcon /> {/* Anterior */}
+                </Button>
+              )}
+              <p className="mt-2">{currentPage + 1}</p>
+              <Button onClick={() => handlePageChange(currentPage + 1)} ml={2}>
+                <ArrowForwardIcon /> {/* Próxima */}
+              </Button>
+            </Flex>
+          </>
+        )}
+      </Box>
     </Box>
   );
 };

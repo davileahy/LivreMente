@@ -25,6 +25,7 @@ const FilterMenu = ({ selectedTags, handleTagChange, clearTags }) => {
         borderRadius={'50px'}
         className='z-10'
         textAlign={'center'}
+        backgroundColor={'#B2F5EA'}
       >
         <Icon as={BsFilter } color={'#0F5A4E'} boxSize={8} />
       </MenuButton>

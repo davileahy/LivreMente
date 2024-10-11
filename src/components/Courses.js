@@ -55,6 +55,7 @@ const Courses = () => {
           colorScheme="green"
           leftIcon={<AddIcon />}
           mt={2}
+          mb={2}
           as={"a"}
           onClick={() => navigate("/cursos")}
           className="hover:cursor-pointer"
