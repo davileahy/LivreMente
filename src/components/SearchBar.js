@@ -1,14 +1,14 @@
 import React from "react";
-import { Input, InputGroup, InputLeftElement, Button } from "@chakra-ui/react";
+import { Input, InputGroup, InputLeftElement, Button, Select } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 
-const SearchBar = ({ query, setQuery, onSearch }) => {
+const SearchBar = ({ query, setQuery, onSearch, selectedCategory, setSelectedCategory }) => {
   const handleInputChange = (event) => {
     setQuery(event.target.value);
   };
 
-  const handleSearchClick = () => {
-    onSearch();
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
   };
 
   return (
@@ -19,7 +19,14 @@ const SearchBar = ({ query, setQuery, onSearch }) => {
         value={query}
         onChange={handleInputChange}
       />
-      <Button onClick={handleSearchClick} ml={2}>Buscar</Button>
+      <Select placeholder="Selecionar categoria" onChange={handleCategoryChange} ml={2}>
+        <option value="educacao">Educação</option>
+        <option value="linguagem">Linguagem</option>
+        <option value="ensino">Ensino</option>
+        <option value="idiomas">Idiomas</option>
+        <option value="cursos">Cursos</option>
+      </Select>
+      <Button onClick={onSearch} ml={2}>Buscar</Button>
     </InputGroup>
   );
 };
