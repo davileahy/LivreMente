@@ -103,7 +103,10 @@ const LibraryPage = () => {
           backgroundColor={"white"}
           placeholder="Selecione uma categoria"
           mt={4}
-          onChange={(e) => setSelectedCategory(e.target.value)}
+          onChange={(e) => {
+            setSelectedCategory(e.target.value);
+            handleSearch()
+          }}
           maxW="300px"
           mx="auto"
         >

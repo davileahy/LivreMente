@@ -23,7 +23,7 @@ const FilterMenu = ({ selectedTags, handleTagChange, clearTags }) => {
         w="100%"
         color={"white"}
         borderRadius={'50px'}
-        className='z-10'
+        className='z-9'
         textAlign={'center'}
         backgroundColor={'#B2F5EA'}
       >
