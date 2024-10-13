@@ -136,7 +136,7 @@ const AllCoursesPage = () => {
         h="100%"
       >
         {/* Componente de filtro */}
-        <div className="mt-5">
+        <div className="mt-16">
           <FilterMenu
             selectedTags={selectedTags}
             handleTagChange={handleTagChange}
@@ -188,13 +188,10 @@ const AllCoursesPage = () => {
 
         {/* Botões de navegação para as páginas */}
         <Flex mt={10} justifyContent="center" alignItems="center">
-          <Button 
-            onClick={handlePreviousPage} 
-            isDisabled={currentPage === 1}
-          >
+          <Button onClick={handlePreviousPage} isDisabled={currentPage === 1}>
             <ArrowBackIcon />
           </Button>
-          <Box mx={4} color={'white'} fontWeight={'bold'}>
+          <Box mx={4} color={"white"} fontWeight={"bold"}>
             {currentPage} / {totalPages}
           </Box>
           <Button

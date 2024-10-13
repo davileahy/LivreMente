@@ -9,44 +9,58 @@ import {
   Button,
   Icon,
 } from "@chakra-ui/react";
-import {BsFilter } from 'react-icons/bs'
+import { BsFilter } from "react-icons/bs";
 import { DeleteIcon } from "@chakra-ui/icons";
 
 // Componente reutilizável para o menu de filtros
 const FilterMenu = ({ selectedTags, handleTagChange, clearTags }) => {
+  const handleMenuItemClick = (value) => {
+    // Toggla a tag quando o MenuItem é clicado
+    handleTagChange(
+      selectedTags.includes(value)
+        ? selectedTags.filter((tag) => tag !== value) // Remove se já estiver selecionada
+        : [...selectedTags, value] // Adiciona se não estiver selecionada
+    );
+  };
+
   return (
-    <Menu closeOnSelect={false} textAlign={'center'}>
+    <Menu closeOnSelect={false} textAlign={"center"}>
       <MenuButton
         as={Button}
         aria-label="Filtros"
         size="lg"
         w="100%"
         color={"white"}
-        borderRadius={'50px'}
-        className='z-9'
-        textAlign={'center'}
-        backgroundColor={'whitesmoke'}
+        borderRadius={"50px"}
+        className="z-9"
+        textAlign={"center"}
+        backgroundColor={"whitesmoke"}
       >
-        <Icon as={BsFilter } color={'#0F5A4E'} boxSize={8} />
+        <Icon as={BsFilter} color={"#0F5A4E"} boxSize={8} />
       </MenuButton>
 
       <MenuList minWidth="240px">
         <CheckboxGroup value={selectedTags} onChange={handleTagChange}>
-          <MenuItem closeOnSelect={false}>
-            <Checkbox value="Inglês">Inglês</Checkbox>
-          </MenuItem>
-          <MenuItem closeOnSelect={false}>
-            <Checkbox value="Iniciantes">Iniciantes</Checkbox>
-          </MenuItem>
-          <MenuItem closeOnSelect={false}>
-            <Checkbox value="Certificado">Certificado</Checkbox>
-          </MenuItem>
-          <MenuItem closeOnSelect={false}>
-            <Checkbox value="Intermediário">Intermediário</Checkbox>
-          </MenuItem>
-          <MenuItem closeOnSelect={false}>
-            <Checkbox value="Gratuito">Gratuito</Checkbox>
-          </MenuItem>
+          {/* Simplificando com o uso de MenuItem para o clique completo */}
+          {[
+            "Inglês",
+            "Iniciantes",
+            "Certificado",
+            "Intermediário",
+            "Gratuito",
+          ].map((tag) => (
+            <MenuItem
+              key={tag}
+              onClick={() => handleMenuItemClick(tag)} // Define o comportamento de toggle no click
+            >
+              <Checkbox
+                isChecked={selectedTags.includes(tag)} // Define se o checkbox está marcado
+                pointerEvents="none" // Evita que o checkbox capture o evento diretamente, o clique será no MenuItem
+              >
+                {tag}
+              </Checkbox>
+            </MenuItem>
+          ))}
         </CheckboxGroup>
 
         {/* Botão para limpar todas as tags */}

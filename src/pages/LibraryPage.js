@@ -107,6 +107,7 @@ const LibraryPage = () => {
             setSelectedCategory(e.target.value);
             handleSearch()
           }}
+          
           maxW="300px"
           mx="auto"
         >
@@ -158,7 +159,7 @@ const LibraryPage = () => {
                   <ArrowBackIcon /> {/* Anterior */}
                 </Button>
               )}
-              <p className="mt-2">{currentPage + 1}</p>
+              <p className="mt-2 text-white font-bold">{currentPage + 1}</p>
               <Button onClick={() => handlePageChange(currentPage + 1)} ml={2}>
                 <ArrowForwardIcon /> {/* Próxima */}
               </Button>
