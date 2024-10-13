@@ -18,10 +18,11 @@ import {
   BsChatDots,
   BsBook,
   BsList,
+  BsHouse,
 } from "react-icons/bs";
 
 import { Link as ScrollLink } from "react-scroll";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import small_logo from "../assets/favicon.png";
 import HomeButton from "./HomeButton";
@@ -29,6 +30,10 @@ import HomeButton from "./HomeButton";
 const Navbar = () => {
   // Navigate para redirecionamento de página
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isHomePage =
+    location.pathname === "/" || location.pathname === "/inicio";
 
   // Estado para controlar a abertura do drawer (menu mobile)
   const [isOpen, setIsOpen] = useState(false);
@@ -48,19 +53,33 @@ const Navbar = () => {
       className="fixed w-full z-10 shadow-md"
     >
       <Flex justify="space-between" align="center">
-        {/* Logo responsiva que leva para o topo da página caso clicada */}
-        <ScrollLink to="inicio" smooth={true} duration={500} offset={-70}>
-          <img
-            src={small_logo}
-            alt="logo"
-            style={{ width: logoSize, height: "auto" }}
-            className="hover:scale-125 duration-[0.5s] hover:cursor-pointer"
-          />
-        </ScrollLink>
+        {/* Logo responsiva, leva para a homepage caso o user não esteja na homepage.
+        
+        caso esteja, leva para o topo da página*/}
+
+        {isHomePage ? (
+          <ScrollLink to="inicio" smooth={true} duration={500} offset={-70}>
+            <img
+              src={small_logo}
+              alt="logo"
+              style={{ width: logoSize, height: "auto" }}
+              className="hover:scale-125 duration-[0.5s] hover:cursor-pointer"
+            />
+          </ScrollLink>
+        ) : (
+          !isHomePage && (
+            <img
+              onClick={() => navigate("/inicio")}
+              src={small_logo}
+              alt="logo"
+              style={{ width: logoSize, height: "auto" }}
+              className="hover:scale-125 duration-[0.5s] hover:cursor-pointer"
+            />
+          )
+        )}
 
         {/* Links exibidos em telas maiores */}
         <Flex gap={10} display={displayLinks}>
-
           {/* Leva para o topo da página quando estiver na metade ou abaixo */}
           <HomeButton />
           {/* Redireciona para BIBLIOTECA */}
@@ -69,7 +88,7 @@ const Navbar = () => {
             color="#0D415D"
             size="lg"
             className="hover:scale-125 duration-[0.5s]"
-            onClick={() => navigate('/biblioteca')}
+            onClick={() => navigate("/biblioteca")}
           >
             Biblioteca <Icon as={BsBook} ml={2} />
           </Button>
@@ -80,7 +99,7 @@ const Navbar = () => {
             color="#0D415D"
             size="lg"
             className="hover:scale-125 duration-[0.5s]"
-            onClick={() => navigate('/saiba_mais')}
+            onClick={() => navigate("/saiba_mais")}
           >
             Sobre <Icon as={BsChatDots} ml={2} />
           </Button>
@@ -91,7 +110,7 @@ const Navbar = () => {
             color="#0D415D"
             size="lg"
             className="hover:scale-125 duration-[0.5s]"
-            onClick={() => navigate('/cursos')}
+            onClick={() => navigate("/cursos")}
           >
             Cursos <Icon as={BsJournalBookmarkFill} ml={2} />
           </Button>
@@ -118,20 +137,40 @@ const Navbar = () => {
             <DrawerHeader>Menu</DrawerHeader>
 
             <DrawerBody>
-              <Flex direction="column" gap={4}>
-                <Button variant="link" color="#0D415D" size="lg" onClick={() => navigate('/inicio')}>
-                  Início
+              <Flex direction="column" gap={4} alignItems={'end'}>
+                <Button
+                  variant="link"
+                  color="#0D415D"
+                  size="lg"
+                  onClick={() => navigate("/inicio")}
+                >
+                  Início <Icon as={BsHouse} ml={2} />
                 </Button>
 
-                <Button variant="link" color="#0D415D" size="lg" onClick={() => navigate('/biblioteca')}>
+                <Button
+                  variant="link"
+                  color="#0D415D"
+                  size="lg"
+                  onClick={() => navigate("/biblioteca")}
+                >
                   Biblioteca <Icon as={BsBook} ml={2} />
                 </Button>
 
-                <Button variant="link" color="#0D415D" size="lg" onClick={() => navigate('/saiba_mais') }>
+                <Button
+                  variant="link"
+                  color="#0D415D"
+                  size="lg"
+                  onClick={() => navigate("/saiba_mais")}
+                >
                   Sobre <Icon as={BsChatDots} ml={2} />
                 </Button>
 
-                <Button variant="link" color="#0D415D" size="lg" onClick={() => navigate('/cursos')}>
+                <Button
+                  variant="link"
+                  color="#0D415D"
+                  size="lg"
+                  onClick={() => navigate("/cursos")}
+                >
                   Cursos <Icon as={BsJournalBookmarkFill} ml={2} />
                 </Button>
               </Flex>

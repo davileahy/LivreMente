@@ -48,11 +48,22 @@ const MiniCourseCard = ({ title, logo, description, categories, link }) => {
         _hover={{ boxShadow: "xl", transform: "scale(1.05)" }}
         transition="transform 0.2s ease-in-out"
       >
-        <Image src={logo} alt={`${title} logo`} maxH="90%" maxW="90%" borderRadius={'20px'} />
+        <Image
+          src={logo}
+          alt={`${title} logo`}
+          maxH="90%"
+          maxW="90%"
+          borderRadius={"20px"}
+        />
       </Box>
 
       {/* Modal com as informações detalhadas */}
-      <Modal isOpen={isOpen} onClose={onClose} isCentered size={{ base: "sm", md: "lg" }}>
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        isCentered
+        size={{ base: "sm", md: "lg" }}
+      >
         <ModalOverlay />
         <ModalContent
           as={motion.div}
@@ -65,7 +76,14 @@ const MiniCourseCard = ({ title, logo, description, categories, link }) => {
           <ModalHeader>{title}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Image src={logo} alt={`${title} logo`} mb={4} borderRadius={'50px'} />
+            <Image
+              src={logo}
+              alt={`${title} logo`}
+              mb={4}
+              borderRadius={"10px"}
+              maxW={'auto'}
+              height={'150px'}
+            />
             <Text mb={4}>{description}</Text>
 
             {/* Exibição das categorias */}
@@ -76,16 +94,14 @@ const MiniCourseCard = ({ title, logo, description, categories, link }) => {
                 </WrapItem>
               ))}
             </Wrap>
-
-            {/* Link para o curso */}
-            <Link href={link} isExternal color="green" fontSize={"lg"}>
-              Acessar
-            </Link>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
-              Fechar
+            <Button colorScheme="green" mr={3}>
+              {/* Link para o curso */}
+              <Link href={link} isExternal fontSize={"lg"}>
+                Acessar
+              </Link>
             </Button>
           </ModalFooter>
         </ModalContent>

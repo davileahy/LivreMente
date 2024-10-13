@@ -49,7 +49,7 @@ const MorePage = () => {
           <Heading
             as="h1"
             size="2xl"
-            color="#2C3E50"
+            color="whitesmoke"
             textAlign="center"
           >
             Saiba Mais!
@@ -195,7 +195,7 @@ const MorePage = () => {
               alignSelf={"center"}
               variant={'solid'}
             >
-              <ArrowBackIcon /> Voltar para a página inicial
+              <ArrowBackIcon mr={2}/> Voltar 
             </Button>
           </Box>
         </motion.div>

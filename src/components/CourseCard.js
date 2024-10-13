@@ -6,6 +6,18 @@ import {
   Tag,
   VStack,
   HStack,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  Button,
+  Wrap,
+  WrapItem,
+  Link,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
@@ -16,14 +28,21 @@ const cardAnimation = {
   hover: { scale: 1.02, transition: { duration: 0 } },
 };
 
+// Animação para o modal
+const modalAnimation = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: { opacity: 1, scale: 1 },
+};
+
 const CourseCard = ({ title, logo, description, categories, link }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box
       as={motion.a}
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
+      onClick={onOpen}
       initial="hidden"
+      cursor={"pointer"}
       whileInView="visible"
       whileHover="hover"
       viewport={{ once: true, amount: 0.2 }}
@@ -31,7 +50,7 @@ const CourseCard = ({ title, logo, description, categories, link }) => {
       className="p-6 shadow-lg bg-white transition-transform transform hover:scale-105 duration-[0.2s]"
       w="100%"
       maxW={{ base: "100%", md: "700px" }} // Responsivo, se adapta ao tamanho da tela
-      borderRadius="50px"
+      borderRadius="20px"
       overflow="hidden"
       boxShadow="lg"
       p={{ base: 4, md: 6 }} // Padding ajustável para mobile
@@ -48,11 +67,16 @@ const CourseCard = ({ title, logo, description, categories, link }) => {
           alignItems="center"
           w={{ base: "100px", md: "150px" }}
           h={{ base: "100px", md: "150px" }}
-          borderRadius="full"
+          borderRadius="20px"
           overflow="hidden"
           mb={{ base: 4, md: 0 }} // Margem inferior para mobile
         >
-          <Image src={logo} alt="Logo do Curso" objectFit="contain" />
+          <Image
+            src={logo}
+            alt="Logo do Curso"
+            objectFit="contain"
+            borderRadius={"20px"}
+          />
         </Box>
 
         {/* Conteúdo do card */}
@@ -69,6 +93,7 @@ const CourseCard = ({ title, logo, description, categories, link }) => {
             fontSize={{ base: "sm", md: "lg" }} // Fonte menor em dispositivos móveis
             textAlign={{ base: "center", md: "left" }} // Centralizado no mobile
             color="gray.600"
+            noOfLines={8}
           >
             {description}
           </Text>
@@ -91,6 +116,54 @@ const CourseCard = ({ title, logo, description, categories, link }) => {
           </HStack>
         </VStack>
       </HStack>
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        isCentered
+        size={{ base: "sm", md: "lg" }}
+      >
+        <ModalOverlay />
+        <ModalContent
+          as={motion.div}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          variants={modalAnimation}
+          transition={{ duration: 0.3 }}
+        >
+          <ModalHeader>{title}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Image
+              src={logo}
+              alt={`${title} logo`}
+              mb={4}
+              borderRadius={"10px"}
+              maxW={"auto"}
+              height={"150px"}
+            />
+            <Text mb={4}>{description}</Text>
+
+            {/* Exibição das categorias */}
+            <Wrap spacing={2} mb={4}>
+              {categories.map((category, index) => (
+                <WrapItem key={index}>
+                  <Tag colorScheme="teal">{category}</Tag>
+                </WrapItem>
+              ))}
+            </Wrap>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme="green" mr={3}>
+              {/* Link para o curso */}
+              <Link href={link} isExternal fontSize={"lg"}>
+                Acessar
+              </Link>
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Box>
   );
 };

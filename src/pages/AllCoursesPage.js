@@ -188,10 +188,13 @@ const AllCoursesPage = () => {
 
         {/* Botões de navegação para as páginas */}
         <Flex mt={10} justifyContent="center" alignItems="center">
-          <Button onClick={handlePreviousPage} isDisabled={currentPage === 1}>
+          <Button 
+            onClick={handlePreviousPage} 
+            isDisabled={currentPage === 1}
+          >
             <ArrowBackIcon />
           </Button>
-          <Box mx={4}>
+          <Box mx={4} color={'white'} fontWeight={'bold'}>
             {currentPage} / {totalPages}
           </Box>
           <Button
