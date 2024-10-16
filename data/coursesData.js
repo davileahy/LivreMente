@@ -19,7 +19,6 @@ const coursesData = [
       "Interativo",
       "Gratuito",
       "Iniciantes",
-      "Interativo",
       "Gameficado",
     ],
     link: "https://www.duolingo.com/",

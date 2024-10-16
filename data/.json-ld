@@ -1,0 +1,29 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Comunicação Sem Fronteiras",
+  "url": "https://comunicasemfronteiras.vercel.app/",
+  "logo": "https://comunicasemfronteiras.vercel.app/logo.png",
+  "description": "Uma plataforma que facilita o acesso à cursos gratuitos na web, de diversas áreas, como o aprendizado de idiomas. Democratizadno e listando o acesso desses cursos e recursos para elevar o curriculo e  ",
+  "founder": {
+    "@type": "Person",
+    "name": "Davi Leahy"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/davileahy"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Contact",
+    "email": "davileahy2@gmail.com"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://comunicasemfronteiras.vercel.app/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://comunicasemfronteiras.vercel.app/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
