@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Image, Text, Heading, Tag, Wrap, WrapItem, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, Link } from "@chakra-ui/react";
 
 const BookCard = ({ title, authors, thumbnail, description, infoLink }) => {

@@ -10,8 +10,6 @@ import {
   Icon,
   Link,
 } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
-import { ArrowBackIcon } from "@chakra-ui/icons";
 import {
   BsPalette,
   BsCodeSquare,
@@ -27,8 +25,6 @@ import HomeButton from "../components/HomeButton";
 import Navbar from "../components/Nav";
 
 const MorePage = () => {
-  const navigate = useNavigate();
-
   return (
     <Box>
       <Navbar />

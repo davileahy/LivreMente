@@ -105,9 +105,9 @@ const LibraryPage = () => {
           mt={4}
           onChange={(e) => {
             setSelectedCategory(e.target.value);
-            handleSearch()
+            // fetchBooks(0, query, selectedCategory)  
           }}
-          
+
           maxW="300px"
           mx="auto"
         >
