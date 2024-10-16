@@ -22,11 +22,11 @@ Proporcionar um ponto de acesso único para plataformas de aprendizado de idioma
 comunicacao-sem-fronteiras/
 ├── public/
 ├── src/
-|   ├── assets/          # Imagens, logos e afins
+│   ├── assets/          # Imagens, logos e afins
 │   ├── components/      # Componentes reutilizáveis
-|   ├── hooks/           # Hooks reautilizáveis
-|   ├── data/
-|   └── coursesData.js   # Dados dos cursos
+│   ├── hooks/           # Hooks reautilizáveis
+│   ├── data/
+│   └── coursesData.js   # Dados dos cursos
 │   ├── pages/           # Páginas principais (ex. HomePage)
 │   ├── App.js           # Configuração das rotas
 │   ├── index.js         # Ponto de entrada
