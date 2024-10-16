@@ -137,11 +137,12 @@ const Navbar = () => {
             <DrawerHeader>Menu</DrawerHeader>
 
             <DrawerBody>
-              <Flex direction="column" gap={4} alignItems={'end'}>
+              <Flex direction="column" gap={4} alignItems={'end'} justifyContent={'center'}>
                 <Button
                   variant="link"
                   color="#0D415D"
                   size="lg"
+                  fontSize={'xx-large'}
                   onClick={() => navigate("/inicio")}
                 >
                   Início <Icon as={BsHouse} ml={2} />
@@ -151,6 +152,7 @@ const Navbar = () => {
                   variant="link"
                   color="#0D415D"
                   size="lg"
+                  fontSize={'xx-large'}
                   onClick={() => navigate("/biblioteca")}
                 >
                   Biblioteca <Icon as={BsBook} ml={2} />
@@ -160,15 +162,17 @@ const Navbar = () => {
                   variant="link"
                   color="#0D415D"
                   size="lg"
+                  fontSize={'xx-large'}
                   onClick={() => navigate("/saiba_mais")}
                 >
-                  Sobre <Icon as={BsChatDots} ml={2} />
+                  Sobre   <Icon as={BsChatDots} ml={2} />
                 </Button>
 
                 <Button
                   variant="link"
                   color="#0D415D"
                   size="lg"
+                  fontSize={'xx-large'}
                   onClick={() => navigate("/cursos")}
                 >
                   Cursos <Icon as={BsJournalBookmarkFill} ml={2} />
