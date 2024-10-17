@@ -39,15 +39,35 @@ const FilterMenu = ({ selectedTags, handleTagChange, clearTags }) => {
         <Icon as={BsFilter} color={"#0F5A4E"} boxSize={8} />
       </MenuButton>
 
-      <MenuList minWidth="240px">
+      <MenuList minWidth="240px" maxHeight="300px" overflowY="auto">
+        {/* Botão para limpar todas as tags */}
+        <MenuItem>
+          <Button size="sm" onClick={clearTags} w="100%">
+            <DeleteIcon />
+          </Button>
+        </MenuItem>
         <CheckboxGroup value={selectedTags} onChange={handleTagChange}>
           {/* Simplificando com o uso de MenuItem para o clique completo */}
           {[
+            "Idiomas",
             "Inglês",
-            "Iniciantes",
-            "Certificado",
-            "Intermediário",
             "Gratuito",
+            "Interativo",
+            "Iniciantes",
+            "Intermediário",
+            "Certificado",
+            "Gameficado",
+            "E-Books",
+            "Flashcards",
+            "Repetição Espaçada",
+            "Vídeos",
+            "Conversação",
+            "Gramática",
+            "Vocabulário",
+            "Pronúncia",
+            "Educação",
+            "Aprendizagem Personalizada",
+            "Aprendizagem Visual",
           ].map((tag) => (
             <MenuItem
               key={tag}
@@ -62,13 +82,6 @@ const FilterMenu = ({ selectedTags, handleTagChange, clearTags }) => {
             </MenuItem>
           ))}
         </CheckboxGroup>
-
-        {/* Botão para limpar todas as tags */}
-        <MenuItem>
-          <Button size="sm" onClick={clearTags} w="100%">
-            <DeleteIcon />
-          </Button>
-        </MenuItem>
       </MenuList>
     </Menu>
   );
