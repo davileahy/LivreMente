@@ -34,7 +34,7 @@ const MorePage = () => {
         minH="100vh"
         className="flex justify-center items-center"
         backgroundPosition={"center"}
-        backgroundColor={'teal'}
+        backgroundColor={"teal"}
       >
         <VStack spacing={10} align="start" className="w-full max-w-4xl mx-auto">
           <HomeButton />
@@ -49,7 +49,7 @@ const MorePage = () => {
               size="2xl"
               color="whitesmoke"
               textAlign="center"
-              className='mt-10'
+              className="mt-10"
             >
               Saiba Mais!
             </Heading>
@@ -68,12 +68,12 @@ const MorePage = () => {
               <Text fontSize="lg" color="#34495E">
                 O <strong>Comunicação Sem Fronteiras</strong> surgiu como um
                 projeto de extensão da nossa universidade. No entanto, agora é
-                muito mais do que isso. <br />
+                muito mais do que isso. <br /> <br />
                 Servindo como um hub de plataformas e e-books, o acesso à{" "}
-                <strong>educação</strong> e ao <strong>conhecimento</strong> está
-                aqui, livre para todos. <br />
+                <strong>educação</strong> e ao <strong>conhecimento</strong>{" "}
+                está aqui, livre para todos. <br /> <br />
                 Temos como objetivo proporcionar acesso a plataformas gratuitas
-                para o aprendizado. Nossa missão é democratizar o aprendizado e
+                para o aprendizado de idiomas. Nossa missão é democratizar o aprendizado e
                 facilitar a educação de qualidade para todos.
               </Text>
             </Box>
@@ -95,12 +95,12 @@ const MorePage = () => {
                   gratuitos para aprendizado.
                 </Text>
                 <Text fontSize="lg" color="#34495E">
-                  <Icon as={BsCheck2Circle} /> Facilitar o acesso a plataformas de
-                  ensino interativas.
+                  <Icon as={BsCheck2Circle} /> Facilitar o acesso a plataformas
+                  de ensino interativas.
                 </Text>
                 <Text fontSize="lg" color="#34495E">
-                  <Icon as={BsCheck2Circle} /> Promover a inclusão e a educação de
-                  qualidade.
+                  <Icon as={BsCheck2Circle} /> Promover a inclusão e a educação
+                  de qualidade.
                 </Text>
               </Stack>
             </Box>
@@ -179,8 +179,7 @@ const MorePage = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-          >
-          </motion.div>
+          ></motion.div>
         </VStack>
       </Box>
     </Box>

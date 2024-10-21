@@ -69,7 +69,7 @@ const BookCard = ({ title, authors, thumbnail, description, infoLink }) => {
             </Wrap>
           </ModalBody>
           <ModalFooter>
-            <Link href={infoLink} isExternal color="teal.500" mr={3}>
+            <Link href={infoLink} variant={""} isExternal color="teal.500" mr={3}>
               Acessar Livro
             </Link>
             <Button onClick={onClose}>Fechar</Button>

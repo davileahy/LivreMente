@@ -27,7 +27,7 @@ const About = () => {
         </div>
         <Text fontSize="lg" fontWeight={"normal"}>
           Reunindo varias plataformas, recursos e cursos de acesso gratuitos
-          para impulsionar o seu aprendizado.
+          para impulsionar o seu aprendizado em idiomas.
           <br />
           <Button as="a" href="/saiba_mais" colorScheme="teal" mt={4}>
             <InfoOutlineIcon mr={2} /> Saiba Mais
