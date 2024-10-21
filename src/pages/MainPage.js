@@ -31,6 +31,7 @@ const MainPage = () => {
       </Box>
 
       {/* Seção Sobre */}
+      <h1 className="text-transparent p-0 m-0">Comunicação Sem Fronteiras</h1>
       <Box as="section" id="sobre" className="py-10 px-4 sm:px-8 lg:px-20">
         <About />
       </Box>
