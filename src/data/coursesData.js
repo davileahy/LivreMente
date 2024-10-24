@@ -6,6 +6,12 @@ import logo_anki from "../assets/courses_logos/anki_logo.png";
 import logo_fl from "../assets/courses_logos/fl_logo.png";
 import logo_tandem from "../assets/courses_logos/tandem_logo.png";
 import logo_lingq from "../assets/courses_logos/lingq_logo.png";
+import logo_aba_english from "../assets/courses_logos/aba_logo.png";
+import logo_ginead from "../assets/courses_logos/ginead_logo.jpeg";
+import logo_khan_academy from "../assets/courses_logos/khan_logo.png";
+import logo_lingo_clip from "../assets/courses_logos/lingo_clip_logo.png";
+import logo_bbc_learning_english from "../assets/courses_logos/bbc_learning_english_logo.png";
+import logo_coursera from "../assets/courses_logos/coursera_logo.png";
 
 const coursesData = [
   {
@@ -93,6 +99,68 @@ const coursesData = [
       "Plataforma de cursos online que oferece lições de idiomas de universidades e instituições renomadas. A maioria dos cursos é gratuita, com funcionalidades extras opcionais.",
     categories: ["Idiomas", "Cursos"],
     link: "https://www.futurelearn.com/",
+  },
+  {
+    title: "ABA English",
+    logo: logo_aba_english,
+    description:
+      "Plataforma de aprendizado de inglês com cursos baseados em situações reais e vídeos interativos, disponível gratuitamente com a opção de certificado pago.",
+    categories: ["Certificado", "Intermediário", "Vídeos"],
+    link: "https://www.abaenglish.com/",
+  },
+  {
+    title: "Ginead",
+    logo: logo_ginead,
+    description:
+      "Ginead é uma plataforma de aprendizado de inglês que oferece cursos focados em gramática, vocabulário e conversação, com acesso gratuito a diversos materiais educativos.",
+    categories: ["Conversação", "Intermediário", "Gramática"],
+    link: "https://www.ginead.com/",
+  },
+  {
+    title: "Khan Academy",
+    logo: logo_khan_academy,
+    description:
+      "A Khan Academy é uma plataforma educacional que oferece cursos gratuitos em várias disciplinas, incluindo inglês, matemática, ciências e muito mais, com um enfoque na aprendizagem personalizada.",
+    categories: ["Gratuito", "Educação", "Aprendizagem Personalizada"],
+    link: "https://www.khanacademy.org/",
+  },
+  {
+    title: "Lingo Clip",
+    logo: logo_lingo_clip,
+    description:
+      "O Lingo Clip é uma plataforma de aprendizado de idiomas que utiliza vídeos curtos e interativos para ensinar vocabulário e gramática de forma divertida e envolvente.",
+    categories: ["Gratuito", "Interativo", "Vídeos", "Aprendizagem Visual"],
+    link: "https://www.lingoclip.com/",
+  },
+  {
+    title: "BBC Learning English",
+    logo: logo_bbc_learning_english,
+    description:
+      "BBC Learning English é uma plataforma gratuita que oferece lições de inglês em vários níveis, com vídeos, áudios e exercícios focados em gramática, vocabulário e pronúncia.",
+    categories: [
+      "Gratuito",
+      "Vídeos",
+      "Gramática",
+      "Vocabulário",
+      "Pronúncia",
+      "Idiomas",
+    ],
+    link: "https://www.bbc.co.uk/learningenglish",
+  },
+  {
+    title: "Coursera",
+    logo: logo_coursera,
+    description:
+      "Coursera é uma plataforma online que oferece cursos gratuitos e pagos em diversas áreas, incluindo inglês, com certificados emitidos por universidades e instituições renomadas.",
+    categories: [
+      "Gratuito",
+      "Certificado",
+      "Idiomas",
+      "Educação",
+      "Intermediário",
+      "Avançado",
+    ],
+    link: "https://www.coursera.org/",
   },
   // Adicionar mais cursos conforme necessário
 ];

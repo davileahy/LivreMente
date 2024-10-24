@@ -94,6 +94,36 @@ const LibraryPage = () => {
     >
       {/* Navbar fixa no topo */}
       <Navbar />
+      <Box
+        textAlign="center"
+        px={4}
+        borderRadius={"50px"}
+        backgroundColor={"white"}
+        boxShadow={'2px'}
+        pt={{ base: "100px", md: "120px" }}
+        pb={5}
+      >
+        <Text
+          fontSize={{ base: "3xl", md: "4xl" }}
+          fontWeight="bold"
+          color="#06524B"
+          as={"h1"}
+        >
+          Biblioteca
+        </Text>
+        <Text
+          fontSize={{ base: "md", md: "lg" }}
+          color="darkslategray"
+          mt={2}
+          maxW="800px"
+          mx="auto"
+          fontWeight={'bold'}
+        >
+          Bem-vindo à biblioteca! Aqui você encontrará uma vasta coleção de
+          livros educacionais de todos os tipos. Navegue por diferentes
+          categorias e encontre o livro perfeito para você.
+        </Text>
+      </Box>
 
       <Box pt={{ base: "100px", md: "120px" }} px={4}>
         {/* Barra de busca */}
@@ -105,9 +135,8 @@ const LibraryPage = () => {
           mt={4}
           onChange={(e) => {
             setSelectedCategory(e.target.value);
-            // fetchBooks(0, query, selectedCategory)  
+            // fetchBooks(0, query, selectedCategory)
           }}
-
           maxW="300px"
           mx="auto"
         >
