@@ -99,7 +99,7 @@ const LibraryPage = () => {
         px={4}
         borderRadius={"50px"}
         backgroundColor={"white"}
-        boxShadow={'2px'}
+        boxShadow={"2px"}
         pt={{ base: "100px", md: "120px" }}
         pb={5}
       >
@@ -117,7 +117,7 @@ const LibraryPage = () => {
           mt={2}
           maxW="800px"
           mx="auto"
-          fontWeight={'bold'}
+          fontWeight={"bold"}
         >
           Bem-vindo à biblioteca! Aqui você encontrará uma vasta coleção de
           livros educacionais de todos os tipos. Navegue por diferentes
@@ -196,6 +196,11 @@ const LibraryPage = () => {
           </>
         )}
       </Box>
+      <div className="text-center mt-5">
+        <a href="/politica_de_privacidade">Politica de Privacidade</a>
+        <br />
+        <a href="/termos_de_uso">Termos de Uso</a>
+      </div>
     </Box>
   );
 };

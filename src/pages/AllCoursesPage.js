@@ -201,6 +201,11 @@ const AllCoursesPage = () => {
             <ArrowForwardIcon />
           </Button>
         </Flex>
+        <div className="text-center mt-5">
+          <a href="/politica_de_privacidade">Politica de Privacidade</a>
+          <br />
+          <a href="/termos_de_uso">Termos de Uso</a>
+        </div>
       </Flex>
     </Box>
   );

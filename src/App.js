@@ -5,6 +5,8 @@ import AllCoursesPage from "./pages/AllCoursesPage";
 import LibraryPage from "./pages/LibraryPage";
 import { Analytics } from "@vercel/analytics/react"
 import ScrollToTop from "./hooks/useScrollToTop";
+import PoliticaDePrivacidade from "./pages/PoliticaDePrivacidade";
+import TermosDeUso from "./pages/TermosDeUso";
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
           <Route path="/saiba_mais" element={<MorePage />} />
           <Route path="/cursos" element={<AllCoursesPage />} />
           <Route path="/biblioteca" element={<LibraryPage />} />
+          <Route path="/politica_de_privacidade" element={<PoliticaDePrivacidade />} />
+          <Route path="/termos_de_uso" element={<TermosDeUso />} />
+
           {/* Adicionar outras rotas para diferentes páginas */}
         </Routes>
       </Router>
