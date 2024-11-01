@@ -1,6 +1,5 @@
 import logo_duolingo from "../assets/courses_logos/duolingo_logo.png";
 import logo_kultivi from "../assets/courses_logos/kultivi_logo.png";
-import logo_cultura from "../assets/courses_logos/cultura_logo.png";
 import logo_busuu from "../assets/courses_logos/busuu_logo.png";
 import logo_anki from "../assets/courses_logos/anki_logo.png";
 import logo_fl from "../assets/courses_logos/fl_logo.png";
@@ -44,14 +43,6 @@ const coursesData = [
       "O Memrise é uma plataforma de aprendizado de idiomas que utiliza um algoritmo baseado na ciência cognitiva para ajudar os usuários a aprender de forma mais rápida e eficaz.",
     categories: ["Idiomas", "Inglês", "Intermediário", "Gratuito"],
     link: "https://www.memrise.com/pt-br/",
-  },
-  {
-    title: "[E-BOOKS] Cultura Inglesa",
-    logo: logo_cultura,
-    description:
-      "A Cultura Inglesa, além de oferecerem seus cursos de inglês, possuem materiais gratuitos para acesso. Principalmente E-books e Guias para as pessoas acessarem o inglês.",
-    categories: ["Idiomas", "Inglês", "E-Books", "Gratuito", "Iniciantes"],
-    link: "https://www.culturainglesa.com.br/materiais-gratuitos/",
   },
   {
     title: "Busuu",

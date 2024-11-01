@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react"
 import ScrollToTop from "./hooks/useScrollToTop";
 import PoliticaDePrivacidade from "./pages/PoliticaDePrivacidade";
 import TermosDeUso from "./pages/TermosDeUso";
+import ChatPage from "./pages/ChatPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <ScrollToTop /> {/* Faz com que todas as páginas comecem no topo */}
         <Routes>
           <Route path="/" element={<MainPage />} index/>
+          <Route path="/chat" element={<ChatPage />} />
           <Route path="/inicio" element={<MainPage />} />
           <Route path="/saiba_mais" element={<MorePage />} />
           <Route path="/cursos" element={<AllCoursesPage />} />

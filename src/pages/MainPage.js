@@ -5,11 +5,13 @@ import About from "../components/About";
 import Courses from "../components/Courses";
 import Navbar from "../components/Nav";
 import logo_branca from "../assets/logo-branca.png";
+import ChatBotButton from "../components/ChatBotButton";
 
 const MainPage = () => {
   return (
     <Box>
       <Navbar />
+      <ChatBotButton />
 
       {/* Seção de Início */}
       <Box

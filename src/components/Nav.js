@@ -19,6 +19,10 @@ import {
   BsBook,
   BsList,
   BsHouse,
+  BsBookFill,
+  BsBookHalf,
+  BsChatDotsFill,
+  BsChatFill,
 } from "react-icons/bs";
 
 import { Link as ScrollLink } from "react-scroll";
@@ -26,6 +30,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import small_logo from "../assets/favicon.png";
 import HomeButton from "./HomeButton";
+import { InfoIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
   // Navigate para redirecionamento de página
@@ -82,6 +87,17 @@ const Navbar = () => {
         <Flex gap={10} display={displayLinks}>
           {/* Leva para o topo da página quando estiver na metade ou abaixo */}
           <HomeButton />
+
+          {/* Redireciona para o Chat com o Comunic */}
+          <Button
+            variant="link"
+            color="#0D415D"
+            size="lg"
+            className="hover:scale-125 duration-[0.5s]"
+            onClick={() => navigate("/chat")}
+          >
+            Chat <Icon as={BsChatDotsFill} ml={2} />
+          </Button>
           {/* Redireciona para BIBLIOTECA */}
           <Button
             variant="link"
@@ -90,10 +106,10 @@ const Navbar = () => {
             className="hover:scale-125 duration-[0.5s]"
             onClick={() => navigate("/biblioteca")}
           >
-            Biblioteca <Icon as={BsBook} ml={2} />
+            Biblioteca <Icon as={BsBookHalf} ml={2} />
           </Button>
 
-          {/* Desce a página para SOBRE */}
+          {/* Redireciona para SOBRE */}
           <Button
             variant="link"
             color="#0D415D"
@@ -101,7 +117,7 @@ const Navbar = () => {
             className="hover:scale-125 duration-[0.5s]"
             onClick={() => navigate("/saiba_mais")}
           >
-            Sobre <Icon as={BsChatDots} ml={2} />
+            Sobre <Icon as={InfoIcon} ml={2} />
           </Button>
 
           {/* Redireciona para CURSOS*/}
@@ -137,12 +153,17 @@ const Navbar = () => {
             <DrawerHeader>Menu</DrawerHeader>
 
             <DrawerBody>
-              <Flex direction="column" gap={4} alignItems={'end'} justifyContent={'center'}>
+              <Flex
+                direction="column"
+                gap={4}
+                alignItems={"end"}
+                justifyContent={"center"}
+              >
                 <Button
                   variant="link"
                   color="#0D415D"
                   size="lg"
-                  fontSize={'xx-large'}
+                  fontSize={"xx-large"}
                   onClick={() => navigate("/inicio")}
                 >
                   Início <Icon as={BsHouse} ml={2} />
@@ -152,27 +173,37 @@ const Navbar = () => {
                   variant="link"
                   color="#0D415D"
                   size="lg"
-                  fontSize={'xx-large'}
+                  fontSize={"xx-large"}
+                  onClick={() => navigate("/chat")}
+                >
+                  Chat <Icon as={BsChatDotsFill} ml={2} />
+                </Button>
+
+                <Button
+                  variant="link"
+                  color="#0D415D"
+                  size="lg"
+                  fontSize={"xx-large"}
                   onClick={() => navigate("/biblioteca")}
                 >
-                  Biblioteca <Icon as={BsBook} ml={2} />
+                  Biblioteca <Icon as={BsBookHalf} ml={2} />
                 </Button>
 
                 <Button
                   variant="link"
                   color="#0D415D"
                   size="lg"
-                  fontSize={'xx-large'}
+                  fontSize={"xx-large"}
                   onClick={() => navigate("/saiba_mais")}
                 >
-                  Sobre   <Icon as={BsChatDots} ml={2} />
+                  Sobre <Icon as={InfoIcon} ml={2} />
                 </Button>
 
                 <Button
                   variant="link"
                   color="#0D415D"
                   size="lg"
-                  fontSize={'xx-large'}
+                  fontSize={"xx-large"}
                   onClick={() => navigate("/cursos")}
                 >
                   Cursos <Icon as={BsJournalBookmarkFill} ml={2} />
