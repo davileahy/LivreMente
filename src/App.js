@@ -8,6 +8,8 @@ import ScrollToTop from "./hooks/useScrollToTop";
 import PoliticaDePrivacidade from "./pages/PoliticaDePrivacidade";
 import TermosDeUso from "./pages/TermosDeUso";
 import ChatPage from "./pages/ChatPage";
+import PracticePage from "./pages/PracticePage";
+import LanguageSelectionPage from "./pages/LanguageSelectionPage";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/saiba_mais" element={<MorePage />} />
           <Route path="/cursos" element={<AllCoursesPage />} />
           <Route path="/biblioteca" element={<LibraryPage />} />
+          <Route path="/pratica_enem" element={<LanguageSelectionPage />} />
+          <Route path="/pratica_enem/:language" element={<PracticePage />} />
           <Route path="/politica_de_privacidade" element={<PoliticaDePrivacidade />} />
           <Route path="/termos_de_uso" element={<TermosDeUso />} />
 

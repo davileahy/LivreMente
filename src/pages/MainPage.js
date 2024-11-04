@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Img } from "@chakra-ui/react";
+import { Box, Heading, Img, Button, Highlight } from "@chakra-ui/react";
+
 import { motion } from "framer-motion";
 import About from "../components/About";
 import Courses from "../components/Courses";
@@ -32,8 +33,41 @@ const MainPage = () => {
         />
       </Box>
 
+      <Box
+        as="section"
+        id="ENEM"
+        textAlign={"center"}
+        backgroundColor={"whitesmoke"}
+        borderRadius={50}
+        mt={3}
+        mx={5}
+        py={3}
+        textColor={'darkslategray'}
+
+      >
+        <Heading size={"md"} textColor={""} mt={2} as={'h2'}>
+          Quer práticar para o{" "}
+          <Highlight query={"ENEM"} styles={{ rounded: "full", bg: "teal.100", px:"2", py: "0" }}>
+            ENEM
+          </Highlight>
+          ? <br /> Resolva questões de inglês e espanhol agora!
+        </Heading>
+        <Button
+          as={"a"}
+          variant={"outline"}
+          colorScheme="teal"
+          href="/pratica_enem"
+          mt={2}
+          size={'sm'}
+        >
+          ENEM ✍️
+        </Button>
+      </Box>
+
       {/* Seção Sobre */}
-      <h1 className="text-transparent p-0 m-0">Comunicação Sem Fronteiras</h1>
+      <h1 className="text-transparent p-0 m-0 size-0">
+        Comunicação Sem Fronteiras
+      </h1>
       <Box as="section" id="sobre" className="py-10 px-4 sm:px-8 lg:px-20">
         <About />
       </Box>
