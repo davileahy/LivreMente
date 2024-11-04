@@ -13,7 +13,7 @@ const ChatBot = () => {
     botAvatar:
       "https://files.bpcontent.cloud/2024/11/01/19/20241101195123-VSG20Z97.png",
     botDescription:
-      "Olá! Eu sou o Comunic, o assistente virtual do site Comunicação Sem Fronteiras. Estou aqui para ajudar você a aprender novos idiomas de maneira eficiente e prática. Se precisar de orientação ou quiser explorar mais sobre o nosso site, estou à disposição para redirecioná-lo e oferecer suporte em sua jornada de aprendizado. Vamos juntos quebrar as barreiras da comunicação!o do bot aqui",
+      "Olá! Eu sou o Comunic, o assistente virtual do site Comunicação Sem Fronteiras. Estou aqui para ajudar você a aprender novos idiomas de maneira eficiente e prática. Se precisar de orientação ou quiser explorar mais sobre o nosso site, estou à disposição para redirecioná-lo e oferecer suporte em sua jornada de aprendizado. Vamos juntos quebrar as barreiras da comunicação!",
   };
 
   return (

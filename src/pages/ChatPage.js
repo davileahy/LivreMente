@@ -16,7 +16,9 @@ const ChatPage = () => {
                         Fale com o Comunic! Seu assistente de idiomas, preparado para ajudar você a aprender novas línguas e explorar o site.
                     </Text>
                 </Box>
-                <ChatBot />
+                <Box className='mb-10 w-[100%]'>
+                    <ChatBot />
+                </Box>
             </Flex>
         </Box>
     );
