@@ -7,6 +7,7 @@ import {
   VStack,
   Image,
   Flex,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import questions from "../data/questions"; // Importa o conjunto de questões
@@ -62,6 +63,9 @@ const PracticePage = () => {
     setIsFinished(false);
   };
 
+  const buttonFontSize = useBreakpointValue({ base: "sm", md: "md" });
+  const boxWidth = useBreakpointValue({ base: "95%", md: "600px" });
+
   // Renderiza a tela de resultados se o quiz estiver concluído
   if (isFinished) {
     return (
@@ -74,8 +78,8 @@ const PracticePage = () => {
       >
         <HomeButton />
         <Box textAlign="center" bg="white" p={8} rounded="lg" shadow="md">
-          <Heading color="teal.500">Resultado do Quiz</Heading>
-          <Text fontSize="xl" mt={4}>
+          <Heading color="teal.500" as={'h1'}>Resultado do Teste</Heading>
+          <Text fontSize="xl" mt={4} as={'h2'}>
             Você acertou {score} de {selectedQuestions.length} questões!
           </Text>
           <Button colorScheme="teal" onClick={restartQuiz} mt={6}>
@@ -91,7 +95,7 @@ const PracticePage = () => {
   if (!question) {
     return (
       <Flex justify="center" align="center" minHeight="100vh">
-        <Heading color="gray.500">Carregando questões...</Heading>
+        <Heading color="gray.500" as={'h1'}>Carregando questões...</Heading>
       </Flex>
     );
   }
@@ -107,30 +111,36 @@ const PracticePage = () => {
       p={4}
     >
       <HomeButton />
-      <Box bg="white" p={8} rounded="lg" shadow="md" maxWidth="600px" w="100%">
-        <VStack spacing={6}>
-          <Heading size="lg" color="teal.600">
+      <Box bg="white" p={8} rounded="lg" shadow="md" maxWidth={boxWidth} w="100%">
+        <VStack spacing={6} align="stretch">
+          <Heading size="lg" color="teal.600" textAlign="center" fontSize={{ base: "lg", md: "xl" }}>
             {question.prompt}
           </Heading>
           {question.image && (
             <Image
               src={question.image}
               alt="imagem da questão"
-              boxSize="300px"
+              boxSize={{ base: "250px", md: "300px" }}
               objectFit="cover"
               rounded="md"
             />
           )}
           {question.options.map((option, index) => (
-            <Button
-              key={index}
-              onClick={() => handleAnswer(option)}
-              colorScheme="teal"
-              variant="outline"
-              w="100%"
-            >
-              {option}
-            </Button>
+            <Flex key={index} w="100%">
+              <Button
+                onClick={() => handleAnswer(option)}
+                colorScheme="teal"
+                variant="outline"
+                fontSize={buttonFontSize}
+                p={4}
+                whiteSpace="normal"
+                flex="1"
+                textAlign="left"
+                size={'lg'}
+              >
+                {option}
+              </Button>
+            </Flex>
           ))}
         </VStack>
       </Box>
