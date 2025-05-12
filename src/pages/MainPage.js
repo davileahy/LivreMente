@@ -7,6 +7,7 @@ import Courses from "../components/Courses";
 import Navbar from "../components/Nav";
 import logo_branca from "../assets/logo-branca.png";
 import ChatBotButton from "../components/ChatBotButton";
+import Tips from "../components/Tips";
 
 const MainPage = () => {
   return (
@@ -42,12 +43,14 @@ const MainPage = () => {
         mt={3}
         mx={5}
         py={3}
-        textColor={'darkslategray'}
-
+        textColor={"darkslategray"}
       >
-        <Heading size={"md"} textColor={""} mt={2} as={'h2'}>
+        <Heading size={"md"} textColor={""} mt={2} as={"h2"}>
           Quer práticar para o{" "}
-          <Highlight query={"ENEM"} styles={{ rounded: "full", bg: "teal.100", px:"2", py: "0" }}>
+          <Highlight
+            query={"ENEM"}
+            styles={{ rounded: "full", bg: "teal.100", px: "2", py: "0" }}
+          >
             ENEM
           </Highlight>
           ? <br /> Resolva questões de inglês e espanhol agora!
@@ -58,7 +61,7 @@ const MainPage = () => {
           colorScheme="teal"
           href="/pratica_enem"
           mt={2}
-          size={'sm'}
+          size={"sm"}
         >
           ENEM ✍️
         </Button>
@@ -68,10 +71,10 @@ const MainPage = () => {
       <h1 className="text-transparent p-0 m-0 size-0">
         Comunicação Sem Fronteiras
       </h1>
-      <Box as="section" id="sobre" className="py-10 px-4 sm:px-8 lg:px-20">
-        <About />
+      {/* Seção Posts */}
+      <Box as="section" id="posts" className="py-10 px-4 sm:px-8 lg:px-20">
+        <Tips />
       </Box>
-
       {/* Seção de Cursos */}
       <Box
         as="section"
@@ -79,6 +82,9 @@ const MainPage = () => {
         className="py-10 px-4 sm:px-8 lg:px-20 bg-gray-50"
       >
         <Courses />
+      </Box>
+      <Box as="section" id="sobre" className="py-10 px-4 sm:px-8 lg:px-20">
+        <About />
       </Box>
       <div className="text-center mt-5">
         <a href="/politica_de_privacidade">Politica de Privacidade</a>

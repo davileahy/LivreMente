@@ -66,7 +66,7 @@ const Navbar = () => {
   };
 
   return (
-    <Box as="nav" bg="white" py={4} px={6} className="fixed w-full z-10 shadow-md">
+    <Box as="nav" bg="white" py={4} px={6} className="fixed w-full z-10 shadow-md" mb={20} >
       <Flex justify="space-between" align="center">
         {isHomePage ? (
           <ScrollLink to="inicio" smooth={true} duration={500} offset={-70}>
@@ -122,7 +122,7 @@ const Navbar = () => {
           >
             Chat <Icon as={BsChatDotsFill} ml={2} />
           </Button>
-          
+
           <Button
             variant="link"
             color="#0D415D"

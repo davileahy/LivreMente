@@ -12,6 +12,7 @@ import PracticePage from "./pages/PracticePage";
 import LanguageSelectionPage from "./pages/LanguageSelectionPage";
 import TipsToStudy from "./pages/posts/TipsToStudy";
 import NotFoundPage from "./pages/NotFoundPage";
+import PostsPage from "./pages/posts/PostsPage";
 
 function App() {
   return (
@@ -32,7 +33,9 @@ function App() {
             element={<PoliticaDePrivacidade />}
           />
           <Route path="/termos_de_uso" element={<TermosDeUso />} />
-          <Route path="/posts/dicas_de_estudo" element={<TipsToStudy />} />
+          {/* Posts */}
+          <Route path="/posts" element={<PostsPage />} />
+          <Route path="/posts/dicas-de-estudo" element={<TipsToStudy />} />
           {/* Fallback Route */}
           <Route path="*" element={<NotFoundPage />} />
 
