@@ -21,7 +21,7 @@ const MainPage = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="p-10 bg-[#06524B] flex flex-col items-center justify-center"
+        className="p-10 bg-[#BFBFBF] flex flex-col items-center justify-center"
       >
         {/* Logo Responsivo */}
         <Img
