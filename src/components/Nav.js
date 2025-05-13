@@ -31,9 +31,7 @@ import { InfoIcon } from "@chakra-ui/icons";
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
-  const isHomePage =
-    location.pathname === "/" || location.pathname === "/inicio";
+  const isHomePage = location.pathname === "/" || location.pathname === "/inicio";
 
   const [isOpen, setIsOpen] = useState(false);
   const onClose = () => setIsOpen(false);
@@ -42,7 +40,15 @@ const Navbar = () => {
   const logoSize = useBreakpointValue({ base: "40px", md: "60px" });
   const displayLinks = useBreakpointValue({ base: "none", md: "flex" });
 
-  // Estilo hover animado underline
+  // Links centralizados em um array
+  const navLinks = [
+    { label: "Início", icon: BsHouse, path: "/inicio", hideIfHome: true },
+    { label: "Cursos", icon: BsJournalBookmarkFill, path: "/cursos" },
+    { label: "Biblioteca", icon: BsBookHalf, path: "/biblioteca" },
+    { label: "Chat", icon: BsChatDotsFill, path: "/chat" },
+    { label: "Sobre", icon: InfoIcon, path: "/saiba_mais" },
+  ];
+
   const underlineHover = {
     position: "relative",
     _after: {
@@ -66,8 +72,9 @@ const Navbar = () => {
   };
 
   return (
-    <Box as="nav" bg="white" py={4} px={6} className="fixed w-full z-10 shadow-md" mb={20} >
+    <Box as="nav" bg="white" py={4} px={6} className="w-full z-10 shadow-md" mb={20}>
       <Flex justify="space-between" align="center">
+        {/* Logo */}
         {isHomePage ? (
           <ScrollLink to="inicio" smooth={true} duration={500} offset={-70}>
             <img
@@ -88,63 +95,27 @@ const Navbar = () => {
         )}
 
         {/* Links desktop */}
-        <Flex gap={10} display={displayLinks}>
+        <Flex gap={6} display={displayLinks}>
           <Box sx={underlineHover}>
             <HomeButton />
           </Box>
-          {!isHomePage && (
-            <Button
-              variant="link"
-              color="#0D415D"
-              size="lg"
-              sx={underlineHover}
-              onClick={() => navigate("/inicio")}
-            >
-              Início <Icon as={BsHouse} ml={2} />
-            </Button>
+
+          {navLinks.map(
+            (link) =>
+              !(isHomePage && link.hideIfHome) && (
+                <Button
+                  key={link.label}
+                  variant="link"
+                  color="#0D415D"
+                  size="lg"
+                  sx={underlineHover}
+                  onClick={() => navigate(link.path)}
+                >
+                  {link.label} <Icon as={link.icon} ml={2} />
+                </Button>
+              )
           )}
-          <Button
-            variant="link"
-            color="#0D415D"
-            size="lg"
-            sx={underlineHover}
-            onClick={() => navigate("/cursos")}
-          >
-            Cursos <Icon as={BsJournalBookmarkFill} ml={2} />
-          </Button>
-
-
-          <Button
-            variant="link"
-            color="#0D415D"
-            size="lg"
-            sx={underlineHover}
-            onClick={() => navigate("/biblioteca")}
-          >
-            Biblioteca <Icon as={BsBookHalf} ml={2} />
-          </Button>
-
-          <Button
-            variant="link"
-            color="#0D415D"
-            size="lg"
-            sx={underlineHover}
-            onClick={() => navigate("/chat")}
-          >
-            Chat <Icon as={BsChatDotsFill} ml={2} />
-          </Button>
-
-          <Button
-            variant="link"
-            color="#0D415D"
-            size="lg"
-            sx={underlineHover}
-            onClick={() => navigate("/saiba_mais")}
-          >
-            Sobre <Icon as={InfoIcon} ml={2} />
-          </Button>
         </Flex>
-
 
         {/* Ícone menu mobile */}
         <Box display={{ base: "block", md: "none" }}>
@@ -168,62 +139,25 @@ const Navbar = () => {
 
             <DrawerBody>
               <Flex direction="column" gap={4} alignItems={"end"} justifyContent={"center"}>
-                <Button
-                  variant="link"
-                  color="#0D415D"
-                  size="lg"
-                  fontSize={"xx-large"}
-                  sx={underlineHover}
-                  onClick={() => navigate("/inicio")}
-                >
-                  Início <Icon as={BsHouse} ml={2} />
-                </Button>
-
-                <Button
-                  variant="link"
-                  color="#0D415D"
-                  size="lg"
-                  fontSize={"xx-large"}
-                  sx={underlineHover}
-                  onClick={() => navigate("/cursos")}
-                >
-                  Cursos <Icon as={BsJournalBookmarkFill} ml={2} />
-                </Button>
-                
-                <Button
-                  variant="link"
-                  color="#0D415D"
-                  size="lg"
-                  fontSize={"xx-large"}
-                  sx={underlineHover}
-                  onClick={() => navigate("/biblioteca")}
-                >
-                  Biblioteca <Icon as={BsBookHalf} ml={2} />
-                </Button>
-
-                <Button
-                  variant="link"
-                  color="#0D415D"
-                  size="lg"
-                  fontSize={"xx-large"}
-                  sx={underlineHover}
-                  onClick={() => navigate("/chat")}
-                >
-                  Chat <Icon as={BsChatDotsFill} ml={2} />
-                </Button>
-
-
-                <Button
-                  variant="link"
-                  color="#0D415D"
-                  size="lg"
-                  fontSize={"xx-large"}
-                  sx={underlineHover}
-                  onClick={() => navigate("/saiba_mais")}
-                >
-                  Sobre <Icon as={InfoIcon} ml={2} />
-                </Button>
-
+                {navLinks.map(
+                  (link) =>
+                    !(isHomePage && link.hideIfHome) && (
+                      <Button
+                        key={link.label}
+                        variant="link"
+                        color="#0D415D"
+                        size="lg"
+                        fontSize={"xx-large"}
+                        sx={underlineHover}
+                        onClick={() => {
+                          navigate(link.path);
+                          onClose();
+                        }}
+                      >
+                        {link.label} <Icon as={link.icon} ml={2} />
+                      </Button>
+                    )
+                )}
               </Flex>
             </DrawerBody>
           </DrawerContent>
