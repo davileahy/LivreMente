@@ -92,6 +92,17 @@ const Navbar = () => {
           <Box sx={underlineHover}>
             <HomeButton />
           </Box>
+          {!isHomePage && (
+            <Button
+              variant="link"
+              color="#0D415D"
+              size="lg"
+              sx={underlineHover}
+              onClick={() => navigate("/inicio")}
+            >
+              Início <Icon as={BsHouse} ml={2} />
+            </Button>
+          )}
           <Button
             variant="link"
             color="#0D415D"

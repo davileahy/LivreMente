@@ -81,8 +81,8 @@ const MiniCourseCard = ({ title, logo, description, categories, link }) => {
               alt={`${title} logo`}
               mb={4}
               borderRadius={"10px"}
-              maxW={'auto'}
-              height={'150px'}
+              maxW={"auto"}
+              height={"150px"}
             />
             <Text mb={4}>{description}</Text>
 
@@ -90,14 +90,14 @@ const MiniCourseCard = ({ title, logo, description, categories, link }) => {
             <Wrap spacing={2} mb={4}>
               {categories.map((category, index) => (
                 <WrapItem key={index}>
-                  <Tag colorScheme="teal">{category}</Tag>
+                  <Tag colorScheme="purple">{category}</Tag>
                 </WrapItem>
               ))}
             </Wrap>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="green" mr={3}>
+            <Button colorScheme="blue" mr={3}>
               {/* Link para o curso */}
               <Link href={link} isExternal fontSize={"lg"}>
                 Acessar

@@ -5,15 +5,15 @@ const PostsSidebar = () => {
   return (
         <Box flex="1" display={{ base: "none", md: "block" }}>
           <Box bg="white" p={4} borderRadius="md" shadow="md">
-            <Heading as="h3" size="md" mb={4} color="teal.500">
-              Related Posts
+            <Heading as="h3" size="md" mb={4} color="purple.500">
+              Veja Também
             </Heading>
             <VStack spacing={4} align="start">
-              <Text as="a" href="/posts/time-management" color="teal.600">
-                Time Management for Students
+              <Text as="a" href="/posts/time-management" color="purple.600">
+                post 1
               </Text>
-              <Text as="a" href="/posts/motivation" color="teal.600">
-                Staying Motivated While Studying
+              <Text as="a" href="/posts/motivation" color="purple.600">
+                post 2
               </Text>
             </VStack>
           </Box>

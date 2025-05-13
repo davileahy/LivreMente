@@ -12,7 +12,7 @@ const BlogLayout = ({ title, subtitle, children }) => {
         <Box bg="gray.50" py={10} px={6}>
           {/* Header Section */}
           <Box textAlign="center" mb={8}>
-            <Heading as="h1" size="2xl" color="teal.600">
+            <Heading as="h1" size="2xl" color="purple.600">
               {title}
             </Heading>
             {subtitle && (

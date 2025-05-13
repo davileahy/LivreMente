@@ -107,7 +107,7 @@ const CourseCard = ({ title, logo, description, categories, link }) => {
             {categories.map((category, index) => (
               <Tag
                 key={index}
-                colorScheme="teal"
+                colorScheme="purple"
                 fontSize={{ base: "xs", md: "sm" }}
               >
                 {category}
@@ -148,14 +148,14 @@ const CourseCard = ({ title, logo, description, categories, link }) => {
             <Wrap spacing={2} mb={4}>
               {categories.map((category, index) => (
                 <WrapItem key={index}>
-                  <Tag colorScheme="teal">{category}</Tag>
+                  <Tag colorScheme="purple">{category}</Tag>
                 </WrapItem>
               ))}
             </Wrap>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="green" mr={3}>
+            <Button colorScheme="blue" mr={3}>
               {/* Link para o curso */}
               <Link href={link} isExternal fontSize={"lg"}>
                 Acessar

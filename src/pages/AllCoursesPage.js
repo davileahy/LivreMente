@@ -103,7 +103,7 @@ const AllCoursesPage = () => {
   return (
     <Box
       h="100vh"
-      backgroundColor={"teal"}
+      backgroundColor={"purple"}
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
@@ -148,7 +148,7 @@ const AllCoursesPage = () => {
         <Wrap spacing={4} mb={4} mt={5}>
           {selectedTags.map((tag, index) => (
             <WrapItem key={index}>
-              <Tag colorScheme="teal">{tag}</Tag>
+              <Tag colorScheme="purple">{tag}</Tag>
             </WrapItem>
           ))}
         </Wrap>

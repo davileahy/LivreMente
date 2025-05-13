@@ -52,7 +52,7 @@ const Courses = () => {
         </Text>
         <Button
           variant={"solid"}
-          colorScheme="green"
+          colorScheme="blue"
           leftIcon={<AddIcon />}
           mt={2}
           mb={2}
@@ -74,7 +74,7 @@ const Courses = () => {
         <Wrap spacing={4} mb={4} mt={5}>
           {selectedTags.map((tag, index) => (
             <WrapItem key={index}>
-              <Tag colorScheme="teal">{tag}</Tag>
+              <Tag colorScheme="purple">{tag}</Tag>
             </WrapItem>
           ))}
         </Wrap>

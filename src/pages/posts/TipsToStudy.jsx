@@ -14,7 +14,7 @@ const TipsToStudy = () => {
         mb={6}
       />
 
-      <Heading as="h2" size="lg" color="teal.500" mt={6}>
+      <Heading as="h2" size="lg" color="purple.500" mt={6}>
         1. Utilize Técnicas de Estudo Baseadas em Evidências
       </Heading>
       <Text fontSize="md" color="gray.700" mt={2}>
@@ -38,49 +38,49 @@ const TipsToStudy = () => {
         </ListItem>
       </UnorderedList>
 
-      <Heading as="h2" size="lg" color="teal.500" mt={6}>
+      <Heading as="h2" size="lg" color="purple.500" mt={6}>
         2. Crie um Ambiente de Estudo Adequado
       </Heading>
       <Text fontSize="md" color="gray.700" mt={2}>
         Um ambiente tranquilo e organizado é fundamental para a concentração. Certifique-se de que seu local de estudo seja livre de distrações, bem iluminado e confortável. Manter seus materiais organizados também facilita o acesso e reduz o estresse.
       </Text>
 
-      <Heading as="h2" size="lg" color="teal.500" mt={6}>
+      <Heading as="h2" size="lg" color="purple.500" mt={6}>
         3. Faça Pausas Regulares
       </Heading>
       <Text fontSize="md" color="gray.700" mt={2}>
         Incorporar pausas durante as sessões de estudo ajuda a manter a mente fresca e melhora a assimilação de informações. Técnicas como o Método Pomodoro, que alterna períodos de estudo com intervalos curtos, podem ser eficazes.
       </Text>
 
-      <Heading as="h2" size="lg" color="teal.500" mt={6}>
+      <Heading as="h2" size="lg" color="purple.500" mt={6}>
         4. Utilize Recursos Digitais com Sabedoria
       </Heading>
       <Text fontSize="md" color="gray.700" mt={2}>
         Plataformas online como Khan Academy, YouTube Educacional e aplicativos de flashcards podem complementar seus estudos. No entanto, evite a sobrecarga de informações e selecione recursos que realmente agreguem valor ao seu aprendizado.
       </Text>
 
-      <Heading as="h2" size="lg" color="teal.500" mt={6}>
+      <Heading as="h2" size="lg" color="purple.500" mt={6}>
         5. Durma Bem e Alimente-se Corretamente
       </Heading>
       <Text fontSize="md" color="gray.700" mt={2}>
         O sono adequado e uma alimentação balanceada são essenciais para o funcionamento cognitivo. Dormir bem consolida a memória e melhora a capacidade de concentração.
       </Text>
 
-      <Heading as="h2" size="lg" color="teal.500" mt={6}>
+      <Heading as="h2" size="lg" color="purple.500" mt={6}>
         6. Pratique o Ensino
       </Heading>
       <Text fontSize="md" color="gray.700" mt={2}>
         Ensinar o conteúdo a outra pessoa é uma maneira eficaz de reforçar seu próprio entendimento. Ao explicar conceitos, você identifica lacunas no seu conhecimento e solidifica o aprendizado.
       </Text>
 
-      <Heading as="h2" size="lg" color="teal.500" mt={6}>
+      <Heading as="h2" size="lg" color="purple.500" mt={6}>
         7. Estabeleça Metas Claras
       </Heading>
       <Text fontSize="md" color="gray.700" mt={2}>
         Defina objetivos específicos e alcançáveis para suas sessões de estudo. Isso proporciona direção e motivação, além de facilitar o acompanhamento do progresso.
       </Text>
 
-      <Heading as="h2" size="lg" color="teal.500" mt={6}>
+      <Heading as="h2" size="lg" color="purple.500" mt={6}>
         8. Mantenha-se Motivado
       </Heading>
       <Text fontSize="md" color="gray.700" mt={2}>

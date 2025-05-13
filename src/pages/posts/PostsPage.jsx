@@ -32,7 +32,7 @@ const PostsPage = () => {
     <Box>
       <Navbar />
       <Box maxW="1200px" mx="auto" p={6}>
-        <Heading as="h1" size="2xl" color="teal.600" mb={6} textAlign="center">
+        <Heading as="h1" size="2xl" color="purple.600" mb={6} textAlign="center">
           📚 Todos os Posts
         </Heading>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3 }} spacing={6}>
@@ -50,7 +50,7 @@ const PostsPage = () => {
               <Image src={post.image} alt={post.title} height="200px" width="100%" objectFit="cover" />
               <Box p={4}>
                 <Stack spacing={3}>
-                  <Heading as="h3" size="md" color="teal.500">
+                  <Heading as="h3" size="md" color="purple.500">
                     {post.title}
                   </Heading>
                   <Text fontSize="sm" color="gray.600">
@@ -59,7 +59,7 @@ const PostsPage = () => {
                   <Button
                     as={Link}
                     to={post.link}
-                    colorScheme="teal"
+                    colorScheme="purple"
                     variant="solid"
                     size="sm"
                     alignSelf="flex-start"

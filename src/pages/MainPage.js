@@ -49,7 +49,7 @@ const MainPage = () => {
           Quer práticar para o{" "}
           <Highlight
             query={"ENEM"}
-            styles={{ rounded: "full", bg: "teal.100", px: "2", py: "0" }}
+            styles={{ rounded: "full", bg: "purple.100", px: "2", py: "0" }}
           >
             ENEM
           </Highlight>
@@ -58,7 +58,7 @@ const MainPage = () => {
         <Button
           as={"a"}
           variant={"outline"}
-          colorScheme="teal"
+          colorScheme="purple"
           href="/pratica_enem"
           mt={2}
           size={"sm"}

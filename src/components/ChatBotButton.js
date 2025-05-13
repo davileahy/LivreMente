@@ -34,7 +34,7 @@ const ChatBotButton = () => {
           right="30px"
           borderRadius={50}
           size="lg"
-          colorScheme="teal"
+          colorScheme="purple"
           onClick={onOpen}
           boxShadow="lg"
           zIndex={20}

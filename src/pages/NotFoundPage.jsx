@@ -24,20 +24,20 @@ const NotFoundPage = () => {
         <Heading
           as="h1"
           fontSize={{ base: "4xl", md: "5xl" }}
-          color="whiteAlpha.900"
+          color="whipurplepha.900"
         >
           404 - Página Não Encontrada 🫠
         </Heading>
-        <Text fontSize="lg" color="whiteAlpha.700">
+        <Text fontSize="lg" color="whipurplepha.700">
           Ops! A página que você está procurando não foi encontrada.
         </Text>
         <Button
           as={RouterLink}
           to="/"
           leftIcon={<FaArrowLeft />}
-          colorScheme="teal"
+          colorScheme="purple"
           size="lg"
-          _hover={{ bg: "teal.600" }}
+          _hover={{ bg: "purple.600" }}
         >
           Voltar para a Home
         </Button>

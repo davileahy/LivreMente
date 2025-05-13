@@ -19,7 +19,7 @@ const About = () => {
         <div className="mb-3">
           <Highlight
             query={["aprendizado"]}
-            styles={{ px: "2", py: "1", rounded: "full", bg: "teal.100" }}
+            styles={{ px: "2", py: "1", rounded: "full", bg: "purple.100" }}
           >
             O Comunicação Sem Fronteiras tem como objetivo facilitar o acesso ao
             aprendizado.
@@ -29,7 +29,7 @@ const About = () => {
           Reunindo varias plataformas, recursos e cursos de acesso gratuitos
           para impulsionar o seu aprendizado em idiomas.
           <br />
-          <Button as="a" href="/saiba_mais" colorScheme="teal" mt={4}>
+          <Button as="a" href="/saiba_mais" colorScheme="purple" mt={4}>
             <InfoOutlineIcon mr={2} /> Saiba Mais
           </Button>
         </Text>

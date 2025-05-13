@@ -34,7 +34,7 @@ const MorePage = () => {
         minH="100vh"
         className="flex justify-center items-center"
         backgroundPosition={"center"}
-        backgroundColor={"teal"}
+        backgroundColor={"purple"}
       >
         <VStack spacing={10} align="start" className="w-full max-w-4xl mx-auto">
           <HomeButton />
@@ -73,8 +73,8 @@ const MorePage = () => {
                 <strong>educação</strong> e ao <strong>conhecimento</strong>{" "}
                 está aqui, livre para todos. <br /> <br />
                 Temos como objetivo proporcionar acesso a plataformas gratuitas
-                para o aprendizado de idiomas. Nossa missão é democratizar o aprendizado e
-                facilitar a educação de qualidade para todos.
+                para o aprendizado de idiomas. Nossa missão é democratizar o
+                aprendizado e facilitar a educação de qualidade para todos.
               </Text>
             </Box>
           </motion.div>
