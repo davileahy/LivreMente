@@ -52,7 +52,7 @@ const Courses = () => {
         </Text>
         <Button
           variant={"solid"}
-          colorScheme="blue"
+          colorScheme="purple"
           leftIcon={<AddIcon />}
           mt={2}
           mb={2}

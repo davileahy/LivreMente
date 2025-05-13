@@ -34,7 +34,7 @@ const MorePage = () => {
         minH="100vh"
         className="flex justify-center items-center"
         backgroundPosition={"center"}
-        backgroundColor={"purple"}
+        backgroundColor={"BFBFBF"}
       >
         <VStack spacing={10} align="start" className="w-full max-w-4xl mx-auto">
           <HomeButton />
@@ -47,7 +47,7 @@ const MorePage = () => {
             <Heading
               as="h1"
               size="2xl"
-              color="whitesmoke"
+              color="blue.400"
               textAlign="center"
               className="mt-10"
             >

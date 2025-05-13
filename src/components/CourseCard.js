@@ -155,7 +155,7 @@ const CourseCard = ({ title, logo, description, categories, link }) => {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3}>
+            <Button colorScheme="purple" mr={3}>
               {/* Link para o curso */}
               <Link href={link} isExternal fontSize={"lg"}>
                 Acessar
