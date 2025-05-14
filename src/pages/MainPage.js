@@ -28,7 +28,6 @@ const MainPage = () => {
         <Img
           src={logo_branca}
           alt="logo comunicação sem fronteiras"
-          className="mt-20"
           maxW={{ base: "80%", sm: "60%", md: "40%", lg: "30%" }} // Ajuste dinâmico de tamanho
           mx="auto"
         />

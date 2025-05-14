@@ -103,7 +103,7 @@ const AllCoursesPage = () => {
   return (
     <Box
       h="100vh"
-      backgroundColor={"purple"}
+      backgroundColor={"purple.700"}
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
@@ -114,7 +114,7 @@ const AllCoursesPage = () => {
           <AlertIcon />
           <AlertTitle>Sua tela é pequena!</AlertTitle>
           <AlertDescription>
-            Tente rolar para o lado para ver todos os cursos ;)
+            Tente rolar para o lado para ver todos os cursos 😉
           </AlertDescription>
           <Button
             variant={"ghost"}
@@ -136,7 +136,7 @@ const AllCoursesPage = () => {
         h="100%"
       >
         {/* Componente de filtro */}
-        <div className="mt-16">
+        <div>
           <FilterMenu
             selectedTags={selectedTags}
             handleTagChange={handleTagChange}

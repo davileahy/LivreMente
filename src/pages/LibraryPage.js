@@ -100,7 +100,6 @@ const LibraryPage = () => {
         borderRadius={"50px"}
         backgroundColor={"white"}
         boxShadow={"2px"}
-        pt={{ base: "100px", md: "120px" }}
         pb={5}
       >
         <Text
