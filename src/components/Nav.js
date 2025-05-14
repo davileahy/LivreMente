@@ -72,7 +72,7 @@ const Navbar = () => {
   };
 
   return (
-    <Box as="nav" bg="white" py={4} px={6} className="w-full z-10 shadow-md" mb={20}>
+    <Box as="nav" bg="white" py={4} px={6} className="w-full z-10 shadow-md">
       <Flex justify="space-between" align="center">
         {/* Logo */}
         {isHomePage ? (
