@@ -19,6 +19,7 @@ import {
   BsBookHalf,
   BsList,
   BsHouse,
+  BsCollectionFill,
 } from "react-icons/bs";
 
 import { Link as ScrollLink } from "react-scroll";
@@ -31,7 +32,8 @@ import { InfoIcon } from "@chakra-ui/icons";
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const isHomePage = location.pathname === "/" || location.pathname === "/inicio";
+  const isHomePage =
+    location.pathname === "/" || location.pathname === "/inicio";
 
   const [isOpen, setIsOpen] = useState(false);
   const onClose = () => setIsOpen(false);
@@ -44,6 +46,7 @@ const Navbar = () => {
   const navLinks = [
     { label: "Início", icon: BsHouse, path: "/inicio", hideIfHome: true },
     { label: "Cursos", icon: BsJournalBookmarkFill, path: "/cursos" },
+    { label: "Posts", icon: BsCollectionFill, path: "/posts" },
     { label: "Biblioteca", icon: BsBookHalf, path: "/biblioteca" },
     { label: "Chat", icon: BsChatDotsFill, path: "/chat" },
     { label: "Sobre", icon: InfoIcon, path: "/saiba_mais" },
@@ -138,7 +141,12 @@ const Navbar = () => {
             <DrawerHeader>Menu</DrawerHeader>
 
             <DrawerBody>
-              <Flex direction="column" gap={4} alignItems={"end"} justifyContent={"center"}>
+              <Flex
+                direction="column"
+                gap={4}
+                alignItems={"end"}
+                justifyContent={"center"}
+              >
                 {navLinks.map(
                   (link) =>
                     !(isHomePage && link.hideIfHome) && (

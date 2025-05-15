@@ -16,14 +16,14 @@ const posts = [
     title: "Como Organizar sua Rotina de Estudos",
     subtitle: "Aprenda a estruturar seu tempo e manter o foco diariamente.",
     image: "https://via.placeholder.com/800x400",
-    link: "/posts/organize-study-routine",
+    link: "/posts/rotina-estudos",
   },
   {
     id: 3,
     title: "Método Pomodoro: O Guia Completo",
     subtitle: "Saiba como utilizar essa técnica para aumentar sua produtividade.",
     image: "https://via.placeholder.com/800x400",
-    link: "/posts/pomodoro-technique",
+    link: "/posts/pomodoro",
   },
 ];
 

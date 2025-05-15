@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import PostsSidebar from "../components/PostsSidebar";
 import Navbar from "../components/Nav";
+import Footer from "../components/Footer";
 
 const BlogLayout = ({ title, subtitle, children }) => {
   return (
@@ -38,6 +39,7 @@ const BlogLayout = ({ title, subtitle, children }) => {
             <PostsSidebar />
           </Flex>
         </Box>
+        <Footer />
     </Box>
   );
 };

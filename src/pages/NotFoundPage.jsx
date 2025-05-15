@@ -24,11 +24,11 @@ const NotFoundPage = () => {
         <Heading
           as="h1"
           fontSize={{ base: "4xl", md: "5xl" }}
-          color="whipurplepha.900"
+          color="whiteAlpha.900"
         >
           404 - Página Não Encontrada 🫠
         </Heading>
-        <Text fontSize="lg" color="whipurplepha.700">
+        <Text fontSize="lg" color="whitesmoke">
           Ops! A página que você está procurando não foi encontrada.
         </Text>
         <Button

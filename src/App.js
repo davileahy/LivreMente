@@ -13,6 +13,7 @@ import LanguageSelectionPage from "./pages/LanguageSelectionPage";
 import TipsToStudy from "./pages/posts/TipsToStudy";
 import NotFoundPage from "./pages/NotFoundPage";
 import PostsPage from "./pages/posts/PostsPage";
+import PomodoroGuidePage from "./pages/posts/PomodoroPost";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           {/* Posts */}
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/posts/dicas-de-estudo" element={<TipsToStudy />} />
+          <Route path="/posts/pomodoro" element={<PomodoroGuidePage />} />
           {/* Fallback Route */}
           <Route path="*" element={<NotFoundPage />} />
 

@@ -9,11 +9,11 @@ const PostsSidebar = () => {
               Veja Também
             </Heading>
             <VStack spacing={4} align="start">
-              <Text as="a" href="/posts/time-management" color="purple.600">
-                post 1
+              <Text as="a" href="/posts/dicas-de-estudo" color="purple.600">
+                Dicas para Melhorar seus Estudos
               </Text>
-              <Text as="a" href="/posts/motivation" color="purple.600">
-                post 2
+              <Text as="a" href="/posts/pomodoro" color="purple.600">
+                Método Pomodoro: o Guia Completo
               </Text>
             </VStack>
           </Box>
