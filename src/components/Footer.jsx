@@ -1,5 +1,5 @@
 import { Box, Flex, Text, IconButton, Link, Stack, useBreakpointValue } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaInfo, FaInfoCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 import small_logo from "../assets/favicon.png";
@@ -46,7 +46,7 @@ const Footer = () => {
 
         {/* Social icons */}
         <Flex gap={3} mt={{ base: 4, md: 0 }}>
-          <Link href="https://github.com/" isExternal>
+          <Link href="https://github.com/davileahy" isExternal>
             <IconButton
               aria-label="GitHub"
               icon={<FaGithub />}
@@ -55,19 +55,10 @@ const Footer = () => {
               _hover={{ bg: "whiteAlpha.300" }}
             />
           </Link>
-          <Link href="https://linkedin.com/" isExternal>
+          <Link href="/saiba_mais">
             <IconButton
-              aria-label="LinkedIn"
-              icon={<FaLinkedin />}
-              variant="ghost"
-              color="white"
-              _hover={{ bg: "whiteAlpha.300" }}
-            />
-          </Link>
-          <Link href="https://instagram.com/" isExternal>
-            <IconButton
-              aria-label="Instagram"
-              icon={<FaInstagram />}
+              aria-label="Sobre"
+              icon={<FaInfoCircle />}
               variant="ghost"
               color="white"
               _hover={{ bg: "whiteAlpha.300" }}
