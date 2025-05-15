@@ -171,7 +171,7 @@ const AllCoursesPage = () => {
                 key={index}
                 initial="hidden"
                 animate="visible"
-                transition={{ duration: 0.5, delay: index * 0.2 }}
+                transition={{ duration: 0.3, delay: index * 0.2 }}
                 variants={cardAnimation}
               >
                 <MiniCourseCard

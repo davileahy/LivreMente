@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import {
   CheckboxGroup,
   Checkbox,
@@ -8,20 +8,26 @@ import {
   MenuItem,
   Button,
   Icon,
+  SimpleGrid,
+  Box,
 } from "@chakra-ui/react";
 import { BsFilter } from "react-icons/bs";
 import { DeleteIcon } from "@chakra-ui/icons";
+import { getAllCategories } from "../data/coursesData";
 
-// Componente reutilizável para o menu de filtros
+const capitalize = (str) =>
+  str.charAt(0).toUpperCase() + str.slice(1);
+
 const FilterMenu = ({ selectedTags, handleTagChange, clearTags }) => {
   const handleMenuItemClick = (value) => {
-    // Toggla a tag quando o MenuItem é clicado
     handleTagChange(
       selectedTags.includes(value)
-        ? selectedTags.filter((tag) => tag !== value) // Remove se já estiver selecionada
-        : [...selectedTags, value] // Adiciona se não estiver selecionada
+        ? selectedTags.filter((tag) => tag !== value)
+        : [...selectedTags, value]
     );
   };
+
+  const categories = useMemo(() => getAllCategories(), []);
 
   return (
     <Menu closeOnSelect={false} textAlign={"center"}>
@@ -34,54 +40,34 @@ const FilterMenu = ({ selectedTags, handleTagChange, clearTags }) => {
         borderRadius={"50px"}
         className="z-9"
         textAlign={"center"}
-        backgroundColor={"whitesmoke"}
+        backgroundColor={"purple.300"}
       >
         <Icon as={BsFilter} color={"#0F5A4E"} boxSize={8} />
       </MenuButton>
 
-      <MenuList minWidth="240px" maxHeight="300px" overflowY="auto">
-        {/* Botão para limpar todas as tags */}
+      <MenuList minWidth="320px" maxHeight="300px" overflowY="auto">
         <MenuItem>
           <Button size="sm" onClick={clearTags} w="100%">
             <DeleteIcon />
           </Button>
         </MenuItem>
-        <CheckboxGroup value={selectedTags} onChange={handleTagChange}>
-          {/* Simplificando com o uso de MenuItem para o clique completo */}
-          {[
-            "Idiomas",
-            "Inglês",
-            "Gratuito",
-            "Interativo",
-            "Iniciantes",
-            "Intermediário",
-            "Certificado",
-            "Gameficado",
-            "E-Books",
-            "Flashcards",
-            "Repetição Espaçada",
-            "Vídeos",
-            "Conversação",
-            "Gramática",
-            "Vocabulário",
-            "Pronúncia",
-            "Educação",
-            "Aprendizagem Personalizada",
-            "Aprendizagem Visual",
-          ].map((tag) => (
-            <MenuItem
-              key={tag}
-              onClick={() => handleMenuItemClick(tag)} // Define o comportamento de toggle no click
-            >
-              <Checkbox
-                isChecked={selectedTags.includes(tag)} // Define se o checkbox está marcado
-                pointerEvents="none" // Evita que o checkbox capture o evento diretamente, o clique será no MenuItem
-              >
-                {tag}
-              </Checkbox>
-            </MenuItem>
-          ))}
-        </CheckboxGroup>
+        <Box px={2} py={1}>
+          <CheckboxGroup value={selectedTags} onChange={handleTagChange}>
+            <SimpleGrid columns={2} spacing={1}>
+              {categories.map((tag) => (
+                <Box key={tag}>
+                  <Checkbox
+                    isChecked={selectedTags.includes(tag)}
+                    onChange={() => handleMenuItemClick(tag)}
+                    width="100%"
+                  >
+                    {capitalize(tag)}
+                  </Checkbox>
+                </Box>
+              ))}
+            </SimpleGrid>
+          </CheckboxGroup>
+        </Box>
       </MenuList>
     </Menu>
   );
