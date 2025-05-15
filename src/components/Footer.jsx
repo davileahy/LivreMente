@@ -21,7 +21,7 @@ const Footer = () => {
         <Flex align="center" mb={{ base: 4, md: 0 }}>
           <img src={small_logo} alt="logo" style={{ width: logoSize, height: "auto" }} />
           <Text fontSize="lg" fontWeight="bold" ml={3}>
-            MinhaPlataforma
+            Educação Sem Fronteiras
           </Text>
         </Flex>
 
@@ -78,7 +78,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <Text fontSize="sm" textAlign="center" mt={6} color="gray.300">
-        © {new Date().getFullYear()} MinhaPlataforma. Todos os direitos reservados.
+        © {new Date().getFullYear()} Educação Sem Fronteiras. Todos os direitos reservados.
       </Text>
     </Box>
   );
