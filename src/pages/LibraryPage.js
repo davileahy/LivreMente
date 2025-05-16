@@ -12,7 +12,7 @@ import {
   useBreakpointValue,
   VStack,
 } from "@chakra-ui/react";
-import { ArrowBackIcon, ArrowForwardIcon, SearchIcon } from "@chakra-ui/icons";
+import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 
 import fundo from "../assets/fundo.png";
 import placeholder from "../assets/placeholder.jpg";
@@ -77,6 +77,7 @@ const LibraryPage = () => {
 
   useEffect(() => {
     fetchBooks();
+//es-lint-disable-next-line
   }, []);
 
   const handleSearch = () => {

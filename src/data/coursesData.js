@@ -37,7 +37,7 @@ const coursesData = [
     link: "https://kultivi.com/",
   },
   {
-    title: "Memrise - Aprenda Inglês",
+    title: "Memrise",
     logo: "https://upload.wikimedia.org/wikipedia/pt/6/65/Logotipo_do_Memrise.png",
     description:
       "O Memrise é uma plataforma de aprendizado de idiomas que utiliza um algoritmo baseado na ciência cognitiva para ajudar os usuários a aprender de forma mais rápida e eficaz.",
@@ -169,7 +169,7 @@ const coursesData = [
     link: "https://www.edx.org",
   },
   {
-    title: "Fundação Bradesco (Escola Virtual)",
+    title: "Fundação Bradesco",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA34YJ3qZO4jW0dNj01obPhsUDwWm44RzEig&s",
     description:
       "Plataforma 100% gratuita com cursos e certificado em áreas como administração, finanças, informática e educação. Ideal para quem quer atualizar o currículo.",
@@ -227,7 +227,7 @@ const coursesData = [
     link: "https://www.udemy.com",
   },
   {
-    title: "Senac EAD (cursos gratuitos)",
+    title: "Senac EAD",
     logo: "https://www.ead.senac.br/arquivo/api/download/publico/1134",
     description:
       "O Senac oferece cursos gratuitos online com certificado nas áreas de gestão, comércio, saúde e bem-estar. Ideal para quem quer se qualificar para o mercado.",
@@ -240,6 +240,110 @@ const coursesData = [
     ],
     link: "https://www.ead.senac.br/gratuito",
   },
+
+  {
+    title: "Aprenda Mais (MEC)",
+    logo: "https://aprendamais.mec.gov.br/pluginfile.php/137547/coursecat/description/Faixa%20cursos-01.png",
+    description:
+      "Plataforma oficial do Ministério da Educação do Brasil, oferecendo cursos gratuitos e online em diversas áreas, com certificado de conclusão.",
+    categories: ["Educação", "Tecnologia", "Gestão", "Saúde", "Administração"],
+    link: "https://aprendamais.mec.gov.br/",
+  },
+  {
+    title: "FGV Online",
+    logo: "https://pbs.twimg.com/profile_images/445991012461056000/j38epzOJ_400x400.png",
+    description:
+      "A Fundação Getulio Vargas disponibiliza mais de 200 cursos online gratuitos com certificado, em áreas como Administração, Economia, Direito e Tecnologia.",
+    categories: [
+      "Administração",
+      "Economia",
+      "Direito",
+      "Tecnologia",
+      "Gestão Pública",
+    ],
+    link: "https://educacao-executiva.fgv.br/cursos/gratuitos",
+  },
+  {
+    title: "Cursa",
+    logo: "https://play-lh.googleusercontent.com/UAchx253Yo8rONsp5mrMdW48Ymltv98-b3k732lK2VlZDajHZ-cZhQQL83mHX6LDU4ws",
+    description:
+      "Plataforma que oferece uma ampla gama de cursos gratuitos com certificado em áreas como informática, idiomas, administração e saúde.",
+    categories: ["Informática", "Idiomas", "Administração", "Saúde", "Design"],
+    link: "https://cursa.app/",
+  },
+  {
+    title: "Edutin Academy",
+    logo: "https://edutin.com/favicon.ico",
+    description:
+      "Oferece mais de 6.000 cursos gratuitos com opção de certificado oficial, em diversas áreas do conhecimento.",
+    categories: ["Educação", "Tecnologia", "Negócios", "Saúde", "Artes"],
+    link: "https://edutin.com/cursos-gratis",
+  },
+  {
+    title: "Lúmina (UFRGS)",
+    logo: "https://www.ufrgs.br/sead/wp-content/uploads/2021/09/lumina-md.png",
+    description:
+      "Plataforma da Universidade Federal do Rio Grande do Sul que oferece cursos online gratuitos com certificado, desenvolvidos por professores universitários.",
+    categories: [
+      "Educação",
+      "Tecnologia",
+      "Ciências Humanas",
+      "Saúde",
+      "Meio Ambiente",
+    ],
+    link: "https://lumina.ufrgs.br/",
+  },
+  {
+    title: "FreeCodeCamp",
+    logo: "https://design-style-guide.freecodecamp.org/img/fcc_secondary_small.svg",
+    description:
+      "Organização sem fins lucrativos que oferece cursos gratuitos em programação e desenvolvimento web, com certificados ao concluir projetos.",
+    categories: [
+      "Programação",
+      "Desenvolvimento Web",
+      "JavaScript",
+      "Front-End",
+      "Back-End",
+    ],
+    link: "https://www.freecodecamp.org/",
+  },
+  {
+    title: "Veduca",
+    logo: "https://yt3.googleusercontent.com/ytc/AIdro_lTnZ3huu_wOGlmRttq9ZQUP5rpLyS8n5XOIkZvtoXRlQ=s900-c-k-c0x00ffffff-no-rj",
+    description:
+      "Plataforma brasileira que oferece cursos online gratuitos com certificado, em parceria com universidades renomadas como USP e UNESP.",
+    categories: [
+      "Administração",
+      "Engenharia",
+      "Educação",
+      "Saúde",
+      "Sustentabilidade",
+    ],
+    link: "https://www.veduca.com.br/",
+  },
+  {
+    title: "OpenClassrooms",
+    logo: "https://openclassrooms.com/favicon.ico",
+    description:
+      "Plataforma francesa que oferece cursos gratuitos em diversas áreas, com opção de certificado pago, e foco em empregabilidade.",
+    categories: [
+      "Tecnologia",
+      "Negócios",
+      "Design",
+      "Gestão de Projetos",
+      "Marketing",
+    ],
+    link: "https://openclassrooms.com/",
+  },
+  {
+    title: "Santander Bolsas",
+    logo: "https://www.santander.com.br/sites/WPC_CMS/imagem/25-03-26_141606_M_santander_pf.png?blobnocache=true",
+    description:
+      "O Santander Bolsas oferece milhares de bolsas de estudo gratuitas em parceria com universidades renomadas do Brasil e do mundo. Os cursos abrangem áreas como idiomas, tecnologia, inovação, liderança e muito mais, com foco na empregabilidade e desenvolvimento profissional.",
+    categories: ["Idiomas", "Tecnologia", "Liderança", "Inovação", "Negócios"],
+    link: "https://www.becas-santander.com/pt_br/index.html",
+  },
+
   // Adicionar mais cursos conforme necessário
 ];
 
