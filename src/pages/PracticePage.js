@@ -78,11 +78,13 @@ const PracticePage = () => {
       >
         <HomeButton />
         <Box textAlign="center" bg="white" p={8} rounded="lg" shadow="md">
-          <Heading color="teal.500" as={'h1'}>Resultado do Teste</Heading>
-          <Text fontSize="xl" mt={4} as={'h2'}>
+          <Heading color="purple.500" as={"h1"}>
+            Resultado do Teste
+          </Heading>
+          <Text fontSize="xl" mt={4} as={"h2"}>
             Você acertou {score} de {selectedQuestions.length} questões!
           </Text>
-          <Button colorScheme="teal" onClick={restartQuiz} mt={6}>
+          <Button colorScheme="purple" onClick={restartQuiz} mt={6}>
             Reiniciar
           </Button>
         </Box>
@@ -95,7 +97,9 @@ const PracticePage = () => {
   if (!question) {
     return (
       <Flex justify="center" align="center" minHeight="100vh">
-        <Heading color="gray.500" as={'h1'}>Carregando questões...</Heading>
+        <Heading color="gray.500" as={"h1"}>
+          Carregando questões...
+        </Heading>
       </Flex>
     );
   }
@@ -111,9 +115,21 @@ const PracticePage = () => {
       p={4}
     >
       <HomeButton />
-      <Box bg="white" p={8} rounded="lg" shadow="md" maxWidth={boxWidth} w="100%">
+      <Box
+        bg="white"
+        p={8}
+        rounded="lg"
+        shadow="md"
+        maxWidth={boxWidth}
+        w="100%"
+      >
         <VStack spacing={6} align="stretch">
-          <Heading size="lg" color="teal.600" textAlign="center" fontSize={{ base: "lg", md: "xl" }}>
+          <Heading
+            size="lg"
+            color="purple.600"
+            textAlign="center"
+            fontSize={{ base: "lg", md: "xl" }}
+          >
             {question.prompt}
           </Heading>
           {question.image && (
@@ -129,14 +145,14 @@ const PracticePage = () => {
             <Flex key={index} w="100%">
               <Button
                 onClick={() => handleAnswer(option)}
-                colorScheme="teal"
+                colorScheme="purple"
                 variant="outline"
                 fontSize={buttonFontSize}
                 p={4}
                 whiteSpace="normal"
                 flex="1"
                 textAlign="left"
-                size={'lg'}
+                size={"lg"}
               >
                 {option}
               </Button>

@@ -1,8 +1,8 @@
-# Comunicação Sem Fronteiras
+# Livre Mente
 
 ## Descrição do Projeto
 
-**Comunicação Sem Fronteiras** é uma plataforma desenvolvida como um projeto de extensão de faculdade, que facilita o acesso a cursos gratuitos de inglês e outras plataformas de aprendizado de idiomas. O projeto reúne diversas plataformas de aprendizado em um único local, permitindo que as pessoas as conheçam e globalizando o acesso ao aprendizado de línguas gratuito.
+**Livre Mente** é uma plataforma desenvolvida como um projeto de extensão de faculdade, que facilita o acesso a cursos gratuitos de inglês e outras plataformas de aprendizado de idiomas. O projeto reúne diversas plataformas de aprendizado em um único local, permitindo que as pessoas as conheçam e globalizando o acesso ao aprendizado de línguas gratuito.
 
 ## Objetivo
 

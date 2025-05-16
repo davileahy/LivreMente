@@ -47,12 +47,12 @@ const Courses = () => {
       <Heading as="h2" className="text-center mb-5">
         Cursos
         <Text fontSize="xl" fontWeight="light">
-          Seleção de plataformas de cursos para você aprender idiomas e
+          Seleção de plataformas de cursos para você aprender. Aprenda
           disciplinas importantes para o desenvolvimento profissional e pessoal.
         </Text>
         <Button
           variant={"solid"}
-          colorScheme="green"
+          colorScheme="purple"
           leftIcon={<AddIcon />}
           mt={2}
           mb={2}
@@ -74,7 +74,7 @@ const Courses = () => {
         <Wrap spacing={4} mb={4} mt={5}>
           {selectedTags.map((tag, index) => (
             <WrapItem key={index}>
-              <Tag colorScheme="teal">{tag}</Tag>
+              <Tag colorScheme="purple">{tag}</Tag>
             </WrapItem>
           ))}
         </Wrap>

@@ -27,14 +27,14 @@ const LanguageSelectionPage = () => {
   return (
     <Box bg="#008080" minH="100vh" color="white">
       {isAlertVisible && (
-        <Alert status="info" textAlign={'center'} textColor={'darkslategray'}>
+        <Alert status="info" textAlign={"center"} textColor={"darkslategray"}>
           <AlertIcon />
           <AlertTitle> Pratique para o ENEM! </AlertTitle>
           <AlertDescription>
             Teste seu conhecimento com questões diretamente de diferentes
             edições do ENEM aqui. Domine as questões de idiomas.
           </AlertDescription>
-          <Button onClick={() => setIsAlertVisible(false)} size={'sm'} ml={5}>
+          <Button onClick={() => setIsAlertVisible(false)} size={"sm"} ml={5}>
             <CloseIcon />
           </Button>
         </Alert>
@@ -46,29 +46,29 @@ const LanguageSelectionPage = () => {
         justify="center"
         textAlign="center"
       >
-        <Heading mb={2} mt={28} as={'h1'}>
+        <Heading mb={2} mt={28} as={"h1"}>
           Prática para o ENEM
         </Heading>
-        <Text fontSize={'xl'} mb={3} as={'h2'}>
+        <Text fontSize={"xl"} mb={3} as={"h2"}>
           Garanta 4 pontos na prova!
         </Text>
-        <Text fontSize={'lg'} mb={3} as={'h3'}>
+        <Text fontSize={"lg"} mb={3} as={"h3"}>
           Selecione o idioma desejado para começar a praticar questões.
         </Text>
-        
+
         <Button
           onClick={() => handleLanguageSelect("english")}
-          colorScheme="teal"
+          colorScheme="purple"
           mb={4}
-          size={'lg'}
+          size={"lg"}
         >
           Inglês
         </Button>
         <Tooltip label="A prática de questões de espanhol do ENEM ainda está em desenvolvimento! Teremos atualizações em breve!">
           <Button
             onClick={() => handleLanguageSelect("spanish")}
-            size={'lg'}
-            colorScheme="teal"
+            size={"lg"}
+            colorScheme="purple"
             isDisabled
           >
             Espanhol

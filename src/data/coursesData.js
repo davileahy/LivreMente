@@ -153,7 +153,115 @@ const coursesData = [
     ],
     link: "https://www.coursera.org/",
   },
+
+  {
+    title: "edX",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/EdX_newer_logo.svg/2560px-EdX_newer_logo.svg.png",
+    description:
+      "Fundada por Harvard e MIT, oferece cursos gratuitos de universidades do mundo todo. O acesso às aulas é gratuito e os certificados são opcionais e pagos.",
+    categories: [
+      "universidades",
+      "educação superior",
+      "cursos livres",
+      "certificado opcional",
+      "ensino acadêmico",
+    ],
+    link: "https://www.edx.org",
+  },
+  {
+    title: "Fundação Bradesco (Escola Virtual)",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA34YJ3qZO4jW0dNj01obPhsUDwWm44RzEig&s",
+    description:
+      "Plataforma 100% gratuita com cursos e certificado em áreas como administração, finanças, informática e educação. Ideal para quem quer atualizar o currículo.",
+    categories: [
+      "administração",
+      "educação",
+      "informática",
+      "certificado gratuito",
+      "empregabilidade",
+    ],
+    link: "https://www.ev.org.br",
+  },
+  {
+    title: "Mundo SENAI",
+    logo: "https://portal.fiero.org.br/storage/noticia/rol3eAbO9lOlZZHFarjgkqnyqFGXSTlKWOAK5KB0.png",
+    description:
+      "Oferece cursos gratuitos com certificado voltados à indústria, segurança do trabalho, gestão e tecnologia. Excelente opção para formação técnica e profissional.",
+    categories: [
+      "indústria",
+      "técnico",
+      "segurança do trabalho",
+      "tecnologia",
+      "certificado",
+    ],
+    link: "https://www.mundosenai.com.br",
+  },
+  {
+    title: "Microsoft Learn",
+    logo: "https://learn.microsoft.com/favicon.ico",
+    description:
+      "Cursos gratuitos da Microsoft sobre tecnologia, incluindo nuvem, inteligência artificial, desenvolvimento, segurança da informação e ferramentas como Excel e Word.",
+    categories: [
+      "Microsoft",
+      "programação",
+      "tecnologia",
+      "IA",
+      "Office",
+      "certificado opcional",
+    ],
+    link: "https://learn.microsoft.com/pt-br/training/",
+  },
+  {
+    title: "Udemy",
+    logo: "https://images.seeklogo.com/logo-png/40/2/udemy-logo-png_seeklogo-409219.png",
+    description:
+      "Plataforma com milhares de cursos online. Possui opções gratuitas e pagas em áreas como programação, negócios, design, marketing e mais. Procure por 'cursos grátis' na busca.",
+    categories: [
+      "cursos online",
+      "várias áreas",
+      "tecnologia",
+      "negócios",
+      "design",
+      "certificado",
+    ],
+    link: "https://www.udemy.com",
+  },
+  {
+    title: "Senac EAD (cursos gratuitos)",
+    logo: "https://www.ead.senac.br/arquivo/api/download/publico/1134",
+    description:
+      "O Senac oferece cursos gratuitos online com certificado nas áreas de gestão, comércio, saúde e bem-estar. Ideal para quem quer se qualificar para o mercado.",
+    categories: [
+      "gestão",
+      "comércio",
+      "saúde",
+      "certificado gratuito",
+      "cursos livres",
+    ],
+    link: "https://www.ead.senac.br/gratuito",
+  },
   // Adicionar mais cursos conforme necessário
 ];
 
+export function getAllCourses() {
+  return coursesData;
+}
+
+/**
+ * Get all unique categories from all courses
+ */
+export function getAllCategories() {
+  const categoriesSet = new Set();
+  coursesData.forEach((course) => {
+    course.categories.forEach((cat) => categoriesSet.add(cat));
+  });
+  return Array.from(categoriesSet).sort();
+}
+/**
+ * Get courses filtered by category
+ * @param {string} category
+ */
+export function getCoursesByCategory(category) {
+  return coursesData.filter((course) => course.categories.includes(category));
+}
 export default coursesData;

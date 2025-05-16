@@ -22,7 +22,7 @@ const SearchBar = ({ query, setQuery, onSearch }) => {
         }}
       />
       <Button onClick={onSearch} ml={2}>
-        Buscar
+        <SearchIcon/>
       </Button>
     </InputGroup>
   );

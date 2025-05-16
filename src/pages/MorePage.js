@@ -34,7 +34,7 @@ const MorePage = () => {
         minH="100vh"
         className="flex justify-center items-center"
         backgroundPosition={"center"}
-        backgroundColor={"teal"}
+        backgroundColor={"BFBFBF"}
       >
         <VStack spacing={10} align="start" className="w-full max-w-4xl mx-auto">
           <HomeButton />
@@ -47,7 +47,7 @@ const MorePage = () => {
             <Heading
               as="h1"
               size="2xl"
-              color="whitesmoke"
+              color="blue.400"
               textAlign="center"
               className="mt-10"
             >
@@ -66,15 +66,15 @@ const MorePage = () => {
                 O Projeto
               </Heading>
               <Text fontSize="lg" color="#34495E">
-                O <strong>Comunicação Sem Fronteiras</strong> surgiu como um
-                projeto de extensão da nossa universidade. No entanto, agora é
-                muito mais do que isso. <br /> <br />
+                O <strong>Livre Mente</strong> surgiu como um projeto de
+                extensão da nossa universidade. No entanto, agora é muito mais
+                do que isso. <br /> <br />
                 Servindo como um hub de plataformas e e-books, o acesso à{" "}
                 <strong>educação</strong> e ao <strong>conhecimento</strong>{" "}
                 está aqui, livre para todos. <br /> <br />
                 Temos como objetivo proporcionar acesso a plataformas gratuitas
-                para o aprendizado de idiomas. Nossa missão é democratizar o aprendizado e
-                facilitar a educação de qualidade para todos.
+                para o aprendizado. Nossa missão é democratizar o
+                aprendizado e facilitar a educação de qualidade para todos.
               </Text>
             </Box>
           </motion.div>

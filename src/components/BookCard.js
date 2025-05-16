@@ -1,5 +1,22 @@
 import React from "react";
-import { Box, Image, Text, Heading, Tag, Wrap, WrapItem, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, Link } from "@chakra-ui/react";
+import {
+  Box,
+  Image,
+  Text,
+  Heading,
+  Tag,
+  Wrap,
+  WrapItem,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+  Link,
+} from "@chakra-ui/react";
 
 const BookCard = ({ title, authors, thumbnail, description, infoLink }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -12,10 +29,14 @@ const BookCard = ({ title, authors, thumbnail, description, infoLink }) => {
         overflow="hidden"
         boxShadow="md"
         p={4}
-        _hover={{ boxShadow: "xl", transform: "scale(1.05)", cursor: "pointer" }}
+        _hover={{
+          boxShadow: "xl",
+          transform: "scale(1.05)",
+          cursor: "pointer",
+        }}
         transition="transform 0.2s ease-in-out"
         onClick={onOpen}
-        backgroundColor={'white'}
+        backgroundColor={"white"}
       >
         <Box display="flex" justifyContent="center">
           <Image
@@ -35,7 +56,7 @@ const BookCard = ({ title, authors, thumbnail, description, infoLink }) => {
           <Wrap justify="center" mb={4}>
             {authors.map((author, index) => (
               <WrapItem key={index}>
-                <Tag colorScheme="teal">{author}</Tag>
+                <Tag colorScheme="purple">{author}</Tag>
               </WrapItem>
             ))}
           </Wrap>
@@ -58,18 +79,29 @@ const BookCard = ({ title, authors, thumbnail, description, infoLink }) => {
               objectFit="cover"
               mb={4}
             />
-            <Text mb={4}>{description ? description : "Sem descrição disponível."}</Text>
+            <Text mb={4}>
+              {description ? description : "Sem descrição disponível."}
+            </Text>
 
             <Wrap>
-              {authors && authors.map((author, index) => (
-                <WrapItem key={index}>
-                  <Tag colorScheme="teal" mr={2}>{author}</Tag>
-                </WrapItem>
-              ))}
+              {authors &&
+                authors.map((author, index) => (
+                  <WrapItem key={index}>
+                    <Tag colorScheme="purple" mr={2}>
+                      {author}
+                    </Tag>
+                  </WrapItem>
+                ))}
             </Wrap>
           </ModalBody>
           <ModalFooter>
-            <Link href={infoLink} variant={""} isExternal color="teal.500" mr={3}>
+            <Link
+              href={infoLink}
+              variant={""}
+              isExternal
+              color="purple.500"
+              mr={3}
+            >
               Acessar Livro
             </Link>
             <Button onClick={onClose}>Fechar</Button>
