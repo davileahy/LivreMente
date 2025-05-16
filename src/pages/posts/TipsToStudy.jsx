@@ -8,10 +8,11 @@ const TipsToStudy = () => {
       subtitle="Aprenda como aprimorar seus hábitos de estudo e alcançar seus objetivos."
     >
       <Image
-        src="https://via.placeholder.com/800x400"
+        src="https://images.unsplash.com/photo-1606479067834-db5efd9f2fe9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Dicas de Estudo"
         borderRadius="md"
         mb={6}
+        boxSize={600}
       />
 
       <Heading as="h2" size="lg" color="purple.500" mt={6}>
@@ -41,6 +42,7 @@ const TipsToStudy = () => {
       <Heading as="h2" size="lg" color="purple.500" mt={6}>
         2. Crie um Ambiente de Estudo Adequado
       </Heading>
+      <Image src="https://images.unsplash.com/photo-1593698054469-2bb6fdf4b512?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagem de Ambiente de Estudo" borderRadius="md" my={4} />
       <Text fontSize="md" color="gray.700" mt={2}>
         Um ambiente tranquilo e organizado é fundamental para a concentração. Certifique-se de que seu local de estudo seja livre de distrações, bem iluminado e confortável. Manter seus materiais organizados também facilita o acesso e reduz o estresse.
       </Text>
@@ -48,6 +50,7 @@ const TipsToStudy = () => {
       <Heading as="h2" size="lg" color="purple.500" mt={6}>
         3. Faça Pausas Regulares
       </Heading>
+      <Image src="https://images.unsplash.com/photo-1551818567-d49550a81408?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagem sobre Pausas no Estudo" borderRadius="md" my={4} />
       <Text fontSize="md" color="gray.700" mt={2}>
         Incorporar pausas durante as sessões de estudo ajuda a manter a mente fresca e melhora a assimilação de informações. Técnicas como o Método Pomodoro, que alterna períodos de estudo com intervalos curtos, podem ser eficazes.
       </Text>
@@ -55,6 +58,7 @@ const TipsToStudy = () => {
       <Heading as="h2" size="lg" color="purple.500" mt={6}>
         4. Utilize Recursos Digitais com Sabedoria
       </Heading>
+      <Image src="https://images.unsplash.com/photo-1610484826917-0f101a7bf7f4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagem de Ambiente de Estudo" borderRadius="md" my={4} />
       <Text fontSize="md" color="gray.700" mt={2}>
         Plataformas online como Khan Academy, YouTube Educacional e aplicativos de flashcards podem complementar seus estudos. No entanto, evite a sobrecarga de informações e selecione recursos que realmente agreguem valor ao seu aprendizado.
       </Text>
@@ -69,6 +73,7 @@ const TipsToStudy = () => {
       <Heading as="h2" size="lg" color="purple.500" mt={6}>
         6. Pratique o Ensino
       </Heading>
+      <Image src="https://images.unsplash.com/photo-1605711285791-0219e80e43a3?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagem de Ambiente de Estudo" borderRadius="md" my={4} />
       <Text fontSize="md" color="gray.700" mt={2}>
         Ensinar o conteúdo a outra pessoa é uma maneira eficaz de reforçar seu próprio entendimento. Ao explicar conceitos, você identifica lacunas no seu conhecimento e solidifica o aprendizado.
       </Text>
@@ -83,6 +88,7 @@ const TipsToStudy = () => {
       <Heading as="h2" size="lg" color="purple.500" mt={6}>
         8. Mantenha-se Motivado
       </Heading>
+      <Image src="https://images.unsplash.com/photo-1548438294-1ad5d5f4f063?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagem de Ambiente de Estudo" borderRadius="md" my={4} />
       <Text fontSize="md" color="gray.700" mt={2}>
         Reconheça suas conquistas, por menores que sejam, e recompense-se por atingir metas. Manter-se motivado é crucial para a continuidade e sucesso nos estudos.
       </Text>

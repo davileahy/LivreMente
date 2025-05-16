@@ -47,7 +47,7 @@ const Courses = () => {
       <Heading as="h2" className="text-center mb-5">
         Cursos
         <Text fontSize="xl" fontWeight="light">
-          Seleção de plataformas de cursos para você aprender idiomas e
+          Seleção de plataformas de cursos para você aprender. Aprenda
           disciplinas importantes para o desenvolvimento profissional e pessoal.
         </Text>
         <Button

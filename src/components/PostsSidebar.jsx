@@ -15,6 +15,9 @@ const PostsSidebar = () => {
               <Text as="a" href="/posts/pomodoro" color="purple.600">
                 Método Pomodoro: o Guia Completo
               </Text>
+              <Text as="a" href="/posts/rotina-estudos" color="purple.600">
+                Como Organizar sua Rotina de Estudos
+              </Text>
             </VStack>
           </Box>
         </Box>

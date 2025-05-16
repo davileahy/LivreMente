@@ -21,13 +21,12 @@ const About = () => {
             query={["aprendizado"]}
             styles={{ px: "2", py: "1", rounded: "full", bg: "purple.100" }}
           >
-            O Comunicação Sem Fronteiras tem como objetivo facilitar o acesso ao
-            aprendizado.
+            O Livre Mente tem como objetivo facilitar o acesso ao aprendizado.
           </Highlight>
         </div>
         <Text fontSize="lg" fontWeight={"normal"}>
           Reunindo varias plataformas, recursos e cursos de acesso gratuitos
-          para impulsionar o seu aprendizado em idiomas.
+          para impulsionar o seu aprendizado.
           <br />
           <Button as="a" href="/saiba_mais" colorScheme="purple" mt={4}>
             <InfoOutlineIcon mr={2} /> Saiba Mais

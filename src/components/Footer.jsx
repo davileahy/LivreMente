@@ -1,5 +1,5 @@
 import { Box, Flex, Text, IconButton, Link, Stack, useBreakpointValue } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin, FaInstagram, FaInfo, FaInfoCircle } from "react-icons/fa";
+import { FaGithub, FaInfoCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 import small_logo from "../assets/favicon.png";
@@ -9,7 +9,7 @@ const Footer = () => {
   const logoSize = useBreakpointValue({ base: "30px", md: "40px" });
 
   return (
-    <Box bg="#0D415D" color="white" py={6} px={4} mt={10}>
+    <Box bg="#0D415D" color="white" py={6} px={4}>
       <Flex
         direction={{ base: "column", md: "row" }}
         justify="space-between"
@@ -21,7 +21,7 @@ const Footer = () => {
         <Flex align="center" mb={{ base: 4, md: 0 }}>
           <img src={small_logo} alt="logo" style={{ width: logoSize, height: "auto" }} />
           <Text fontSize="lg" fontWeight="bold" ml={3}>
-            Educação Sem Fronteiras
+            Livre Mente
           </Text>
         </Flex>
 
@@ -69,7 +69,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <Text fontSize="sm" textAlign="center" mt={6} color="gray.300">
-        © {new Date().getFullYear()} Educação Sem Fronteiras. Todos os direitos reservados.
+        © {new Date().getFullYear()} Livre Mente.
       </Text>
     </Box>
   );

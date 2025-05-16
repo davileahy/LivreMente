@@ -10,7 +10,8 @@ import {
   Card, 
   CardHeader, 
   CardBody, 
-  Link 
+  Link, 
+  Image
 } from "@chakra-ui/react";
 import { CheckCircleIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import { FaLeaf, FaClock, FaMobileAlt, FaDesktop } from "react-icons/fa";
@@ -24,6 +25,7 @@ export default function PomodoroGuidePage() {
             {/* 1️⃣ Introdução */}
             <Box>
               <Heading size="2xl" mb={4}>Método Pomodoro: o Guia Completo</Heading>
+              <Image src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Pomodoro tomates" borderRadius="md" my={4} />
               <Text fontSize="lg">
                 Descubra como a técnica Pomodoro pode transformar seus estudos e aumentar sua produtividade com sessões de foco intenso e pausas estratégicas.
               </Text>
@@ -117,6 +119,7 @@ export default function PomodoroGuidePage() {
             {/* 9️⃣ Conclusão */}
             <Box>
               <Heading size="xl" mb={4}>Conclusão</Heading>
+              <Image src="https://images.unsplash.com/photo-1599981819329-31f250c3bc75?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Timer" borderRadius="md" my={4} />
               <Text>
                 O Método Pomodoro é uma ferramenta poderosa para aumentar a produtividade e foco nos estudos. Experimente, adapte os ciclos ao seu estilo e maximize seus resultados.
               </Text>

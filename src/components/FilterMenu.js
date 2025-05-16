@@ -41,8 +41,14 @@ const FilterMenu = ({ selectedTags, handleTagChange, clearTags }) => {
         className="z-9"
         textAlign={"center"}
         backgroundColor={"purple.300"}
+        _hover={{
+          backgroundColor: "purple.400",
+        }}
+        _active={{
+          backgroundColor: "purple.400",
+        }}
       >
-        <Icon as={BsFilter} color={"#0F5A4E"} boxSize={8} />
+        <Icon as={BsFilter} color={"gray.800"} boxSize={8} />
       </MenuButton>
 
       <MenuList minWidth="320px" maxHeight="300px" overflowY="auto">

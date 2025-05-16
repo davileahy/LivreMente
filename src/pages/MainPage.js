@@ -22,17 +22,31 @@ const MainPage = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="p-10 bg-[#BFBFBF] flex flex-col items-center justify-center"
+        className="p-10 bg-[#e8e5eb] flex flex-col items-center justify-center"
       >
         {/* Logo Responsivo */}
         <Img
           src={logo_branca}
-          alt="logo comunicação sem fronteiras"
+          alt="logo Livre Mente"
           maxW={{ base: "80%", sm: "60%", md: "40%", lg: "30%" }} // Ajuste dinâmico de tamanho
           mx="auto"
         />
       </Box>
 
+      <h1 className="text-transparent p-0 m-0 size-0">Livre Mente</h1>
+      {/* Seção Posts */}
+      <Box as="section" id="posts" className="py-10 px-4 sm:px-8 lg:px-20">
+        <Tips />
+      </Box>
+      {/* Seção de Cursos */}
+      <Box
+        as="section"
+        id="cursos"
+        className="py-10 px-4 sm:px-8 lg:px-20 bg-gray-50"
+        >
+        <Courses />
+      </Box>
+      {/* Seção ENEM  */}
       <Box
         as="section"
         id="ENEM"
@@ -43,13 +57,13 @@ const MainPage = () => {
         mx={5}
         py={3}
         textColor={"darkslategray"}
-      >
+        >
         <Heading size={"md"} textColor={""} mt={2} as={"h2"}>
           Quer práticar para o{" "}
           <Highlight
             query={"ENEM"}
             styles={{ rounded: "full", bg: "purple.100", px: "2", py: "0" }}
-          >
+            >
             ENEM
           </Highlight>
           ? <br /> Resolva questões de inglês e espanhol agora!
@@ -61,27 +75,11 @@ const MainPage = () => {
           href="/pratica_enem"
           mt={2}
           size={"sm"}
-        >
+          >
           ENEM ✍️
         </Button>
       </Box>
-
       {/* Seção Sobre */}
-      <h1 className="text-transparent p-0 m-0 size-0">
-        Comunicação Sem Fronteiras
-      </h1>
-      {/* Seção Posts */}
-      <Box as="section" id="posts" className="py-10 px-4 sm:px-8 lg:px-20">
-        <Tips />
-      </Box>
-      {/* Seção de Cursos */}
-      <Box
-        as="section"
-        id="cursos"
-        className="py-10 px-4 sm:px-8 lg:px-20 bg-gray-50"
-      >
-        <Courses />
-      </Box>
       <Box as="section" id="sobre" className="py-10 px-4 sm:px-8 lg:px-20">
         <About />
       </Box>

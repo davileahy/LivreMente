@@ -66,14 +66,14 @@ const MorePage = () => {
                 O Projeto
               </Heading>
               <Text fontSize="lg" color="#34495E">
-                O <strong>Comunicação Sem Fronteiras</strong> surgiu como um
-                projeto de extensão da nossa universidade. No entanto, agora é
-                muito mais do que isso. <br /> <br />
+                O <strong>Livre Mente</strong> surgiu como um projeto de
+                extensão da nossa universidade. No entanto, agora é muito mais
+                do que isso. <br /> <br />
                 Servindo como um hub de plataformas e e-books, o acesso à{" "}
                 <strong>educação</strong> e ao <strong>conhecimento</strong>{" "}
                 está aqui, livre para todos. <br /> <br />
                 Temos como objetivo proporcionar acesso a plataformas gratuitas
-                para o aprendizado de idiomas. Nossa missão é democratizar o
+                para o aprendizado. Nossa missão é democratizar o
                 aprendizado e facilitar a educação de qualidade para todos.
               </Text>
             </Box>

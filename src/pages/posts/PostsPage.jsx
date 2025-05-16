@@ -1,4 +1,4 @@
-import { Box, SimpleGrid, Image, Heading, Text, Button, Stack } from "@chakra-ui/react";
+import { Box, SimpleGrid, Image, Heading, Text, Button, Stack, Highlight } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Nav";
 
@@ -8,21 +8,21 @@ const posts = [
     id: 1,
     title: "Dicas para Melhorar seus Estudos",
     subtitle: "Melhore seus hábitos de estudo com técnicas comprovadas.",
-    image: "https://via.placeholder.com/800x400",
+    image: "https://images.unsplash.com/photo-1551818567-d49550a81408?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     link: "/posts/dicas-de-estudo",
   },
   {
     id: 2,
     title: "Como Organizar sua Rotina de Estudos",
     subtitle: "Aprenda a estruturar seu tempo e manter o foco diariamente.",
-    image: "https://via.placeholder.com/800x400",
+    image: "https://images.unsplash.com/photo-1622993361017-180360aea82c?q=80&w=1120&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     link: "/posts/rotina-estudos",
   },
   {
     id: 3,
     title: "Método Pomodoro: O Guia Completo",
     subtitle: "Saiba como utilizar essa técnica para aumentar sua produtividade.",
-    image: "https://via.placeholder.com/800x400",
+    image: "https://images.unsplash.com/photo-1705948735013-14506f08b823?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     link: "/posts/pomodoro",
   },
 ];
@@ -71,6 +71,39 @@ const PostsPage = () => {
             </Box>
           ))}
         </SimpleGrid>
+      </Box>
+      {/* Seção ENEM  */}
+      <Box
+        as="section"
+        id="ENEM"
+        textAlign={"center"}
+        backgroundColor={"whitesmoke"}
+        borderRadius={50}
+        mt={3}
+        mx={5}
+        py={3}
+        textColor={"darkslategray"}
+        >
+        <Heading size={"md"} textColor={""} mt={2} as={"h2"}>
+          Quer práticar para o{" "}
+          <Highlight
+            query={"ENEM"}
+            styles={{ rounded: "full", bg: "purple.100", px: "2", py: "0" }}
+            >
+            ENEM
+          </Highlight>
+          ? <br /> Resolva questões de inglês e espanhol agora!
+        </Heading>
+        <Button
+          as={"a"}
+          variant={"outline"}
+          colorScheme="purple"
+          href="/pratica_enem"
+          mt={2}
+          size={"sm"}
+          >
+          ENEM ✍️
+        </Button>
       </Box>
     </Box>
   );

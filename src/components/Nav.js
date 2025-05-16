@@ -109,7 +109,7 @@ const Navbar = () => {
                 <Button
                   key={link.label}
                   variant="link"
-                  color="#0D415D"
+                  color="gray.800"
                   size="lg"
                   sx={underlineHover}
                   onClick={() => navigate(link.path)}
