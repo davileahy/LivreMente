@@ -2,11 +2,11 @@
 
 ## Descrição do Projeto
 
-**Livre Mente** é uma plataforma desenvolvida como um projeto de extensão de faculdade, que facilita o acesso a cursos gratuitos de inglês e outras plataformas de aprendizado de idiomas. O projeto reúne diversas plataformas de aprendizado em um único local, permitindo que as pessoas as conheçam e globalizando o acesso ao aprendizado de línguas gratuito.
+**Livre Mente** é uma plataforma desenvolvida como um projeto de extensão de faculdade, que facilita o acesso a cursos gratuitos e plataformas de aprendizado. O projeto reúne diversas plataformas de aprendizado em um único local.
 
 ## Objetivo
 
-Proporcionar um ponto de acesso único para plataformas de aprendizado de idiomas, focando inicialmente em cursos gratuitos de inglês, e quebrar barreiras para o aprendizado de línguas.
+Proporcionar um ponto de acesso único para plataformas de aprendizado de idiomas, focando inicialmente em cursos gratuitos, e quebrar barreiras para o aprendizado.
 
 ## Tecnologias Utilizadas
 
@@ -19,7 +19,7 @@ Proporcionar um ponto de acesso único para plataformas de aprendizado de idioma
 ## Estrutura do Projeto
 
 ```bash
-comunicacao-sem-fronteiras/
+livremente/
 ├── public/
 ├── src/
 │   ├── assets/          # Imagens, logos e afins
@@ -45,4 +45,4 @@ Se tiver dúvidas ou sugestões, entre em contato:
 
 ---
 
-Projeto desenvolvido por Davi Leahy em colaboração com a Universidade de Maceió [UNIMA - AFYA].
+Projeto desenvolvido por Davi Leahy.
