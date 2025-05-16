@@ -10,6 +10,7 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
+  Text,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import FilterMenu from "../components/FilterMenu";
@@ -164,6 +165,7 @@ const AllCoursesPage = () => {
             p={4}
             maxHeight="500px" // Limitar altura a 2 rows
             width="100%"
+            overflowY={"hidden"}
             borderRadius={30}
           >
             {currentCourses.map((course, index) => (
@@ -171,7 +173,7 @@ const AllCoursesPage = () => {
                 key={index}
                 initial="hidden"
                 animate="visible"
-                transition={{ duration: 0.3, delay: index * 0.2 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
                 variants={cardAnimation}
               >
                 <MiniCourseCard
@@ -181,6 +183,9 @@ const AllCoursesPage = () => {
                   categories={course.categories}
                   link={course.link}
                 />
+                <Text mt={2} ml={2} color={"whiteAlpha.900"} bg={"purple.800"} boxShadow={"md"} p={2} borderRadius={"full"} w={"fit-content"}>
+                  {course.title}
+                </Text>
               </motion.div>
             ))}
           </Box>
