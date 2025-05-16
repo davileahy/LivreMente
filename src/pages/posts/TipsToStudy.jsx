@@ -1,4 +1,4 @@
-import { Text, Heading, Image, UnorderedList, ListItem, Link } from "@chakra-ui/react";
+import { Text, Heading, Image, UnorderedList, ListItem } from "@chakra-ui/react";
 import BlogLayout from "../../layout/BlogLayout";
 
 const TipsToStudy = () => {

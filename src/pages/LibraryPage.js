@@ -8,9 +8,11 @@ import {
   Button,
   Select,
   Flex,
+  Checkbox,
   useBreakpointValue,
+  VStack,
 } from "@chakra-ui/react";
-import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
+import { ArrowBackIcon, ArrowForwardIcon, SearchIcon } from "@chakra-ui/icons";
 
 import fundo from "../assets/fundo.png";
 import placeholder from "../assets/placeholder.jpg";
@@ -24,37 +26,46 @@ const LibraryPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [query, setQuery] = useState("");
-  const [filteredBooks, setFilteredBooks] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [onlyFreeBooks, setOnlyFreeBooks] = useState(true);
+  const [onlyPortuguese, setOnlyPortuguese] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
-  const [maxResults] = useState(9); // Limita 9 livros por página
+  const [maxResults] = useState(9);
 
   const api_key = process.env.REACT_APP_GOOGLE_BOOKS_API_KEY;
 
-  // Função para buscar livros da API com paginação
-  const fetchBooks = async (page = 0, searchQuery = "", category = "") => {
+  const fetchBooks = async (page = 0) => {
     setLoading(true);
     setError("");
     const startIndex = page * maxResults;
-    let queryParam = `tag:aprendizado`; // Busca inicial na área de educação
 
-    if (searchQuery) {
-      queryParam = `tag:${searchQuery}`;
+    // Montagem dinâmica da query
+    let queryParam = query ? `${query}` : "educacao";
+
+    if (selectedCategory) {
+      queryParam += `+${selectedCategory}`;
     }
-    if (category) {
-      queryParam += `+${category}`;
+
+    let url = `https://www.googleapis.com/books/v1/volumes?q=${queryParam}&startIndex=${startIndex}&maxResults=${maxResults}&key=${api_key}`;
+
+    if (onlyFreeBooks) {
+      url += `&filter=free-ebooks`;
+    }
+
+    if (onlyPortuguese) {
+      url += `&langRestrict=pt`;
     }
 
     try {
-      const url = `https://www.googleapis.com/books/v1/volumes?q=${queryParam}&startIndex=${startIndex}&maxResults=${maxResults}&key=${api_key}`;
       const response = await axios.get(url);
 
       if (response.data && response.data.items) {
         setBooks(response.data.items);
-        setFilteredBooks(response.data.items);
-        setTotalItems(response.data.totalItems); // Total de itens para paginação
+        setTotalItems(response.data.totalItems);
       } else {
+        setBooks([]);
+        setTotalItems(0);
         setError("Nenhum livro encontrado.");
       }
     } catch (err) {
@@ -64,24 +75,20 @@ const LibraryPage = () => {
     }
   };
 
-  // Chamada inicial para buscar livros
   useEffect(() => {
     fetchBooks();
   }, []);
 
-  // Função para lidar com a busca e filtrar livros
   const handleSearch = () => {
-    setCurrentPage(0); // Resetar para a primeira página quando buscar
-    fetchBooks(0, query, selectedCategory); // Realizar a busca com os parâmetros atuais
+    setCurrentPage(0);
+    fetchBooks(0);
   };
 
-  // Função para mudar de página
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
-    fetchBooks(newPage, query, selectedCategory);
+    fetchBooks(newPage);
   };
 
-  // Configurações de responsividade
   const gridColumns = useBreakpointValue({ base: 1, sm: 2, md: 3 });
 
   return (
@@ -92,79 +99,104 @@ const LibraryPage = () => {
       backgroundSize="cover"
       overflow="hidden"
     >
-      {/* Navbar fixa no topo */}
       <Navbar />
       <Box
         textAlign="center"
         px={4}
-        borderRadius={"50px"}
-        backgroundColor={"white"}
-        boxShadow={"2px"}
+        borderRadius="50px"
+        backgroundColor="white"
+        boxShadow="lg"
         pb={5}
+        mx="auto"
+        w="70vw"
+        mt={10}
       >
-        <Text
-          fontSize={{ base: "3xl", md: "4xl" }}
-          fontWeight="bold"
-          color="#06524B"
-          as={"h1"}
-        >
-          Biblioteca
+        <Text fontSize={{ base: "3xl", md: "4xl" }} fontWeight="bold">
+          📖 Biblioteca
         </Text>
-        <Text
-          fontSize={{ base: "md", md: "lg" }}
-          color="darkslategray"
-          mt={2}
-          maxW="800px"
-          mx="auto"
-          fontWeight={"bold"}
-        >
-          Bem-vindo à biblioteca! Aqui você encontrará uma vasta coleção de
-          livros educacionais de todos os tipos. Navegue por diferentes
-          categorias e encontre o livro perfeito para você.
+        <Text fontSize={{ base: "md", md: "lg" }} mt={2} maxW="800px" mx="auto">
+          Bem-vindo à biblioteca de aprendizado gratuito! Explore materiais de
+          diversas áreas e idiomas, todos de acesso aberto.
         </Text>
       </Box>
 
-      <Box pt={{ base: "100px", md: "120px" }} px={4}>
-        {/* Barra de busca */}
+      <Box pt={{ base: "80px", md: "100px" }} px={4}>
         <SearchBar query={query} setQuery={setQuery} onSearch={handleSearch} />
-        {/* Filtro de categoria */}
-        <Select
-          backgroundColor={"white"}
-          placeholder="Selecione uma categoria"
+
+        <Flex
+          direction={{ base: "column", md: "row" }}
+          justify="center"
+          align="center"
           mt={4}
-          onChange={(e) => {
-            setSelectedCategory(e.target.value);
-            // fetchBooks(0, query, selectedCategory)
-          }}
-          maxW="300px"
-          mx="auto"
+          gap={4}
+          wrap="wrap"
         >
-          <option value="linguagem">Linguagem</option>
-          <option value="ensino">Ensino</option>
-          <option value="idiomas">Idiomas</option>
-          <option value="programacao">Programação</option>
-          <option value="trabalho">Trabalho</option>
-          <option value="medicina">Medicina</option>
-          <option value="ciencias">Ciências</option>
-          <option value="educacao infantil">Educação Infantil</option>
-        </Select>
-        {/* Spinner de carregamento */}
+          <Select
+            backgroundColor="white"
+            placeholder="Selecione uma categoria"
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            maxW="300px"
+          >
+            <option value="educacao">Educação</option>
+            <option value="matematica">Matemática</option>
+            <option value="portugues">Português</option>
+            <option value="historia">História</option>
+            <option value="ciencias">Ciências</option>
+            <option value="literatura">Literatura</option>
+            <option value="filosofia">Filosofia</option>
+            <option value="programacao">Programação</option>
+            <option value="ensino infantil">Ensino Infantil</option>
+            <option value="idiomas">Idiomas</option>
+            <option value="biologia">Biologia</option>
+            <option value="engenharia">Engenharia</option>
+            <option value="medicina">Medicina</option>
+            <option value="administração">Administração</option>
+          </Select>
+
+          <VStack align="start">
+            <Checkbox
+              isChecked={onlyFreeBooks}
+              onChange={(e) => setOnlyFreeBooks(e.target.checked)}
+              colorScheme="green"
+            >
+              Apenas livros gratuitos
+            </Checkbox>
+
+            <Checkbox
+              isChecked={onlyPortuguese}
+              onChange={(e) => setOnlyPortuguese(e.target.checked)}
+              colorScheme="green"
+            >
+              Apenas em português
+            </Checkbox>
+          </VStack>
+
+          <Button colorScheme="blue" onClick={handleSearch}>
+            Buscar 
+          </Button>
+        </Flex>
+
         {loading && (
-          <Flex justifyContent="center" mt={6} height={"100vh"}>
+          <Flex justify="center" mt={6} minH="60vh">
             <Spinner size="xl" />
           </Flex>
         )}
-        {/* Mensagem de erro */}
+
         {error && (
           <Text color="red.500" textAlign="center" mt={6}>
             {error}
           </Text>
         )}
-        {/* Grid de livros */}
+
         {!loading && !error && (
           <>
+            <Text textAlign="center" mt={6} fontWeight="bold">
+              {totalItems} resultados encontrados
+            </Text>
+
             <SimpleGrid columns={gridColumns} spacing={6} mt={6}>
-              {filteredBooks.map((book) => (
+              {books.map((book) => (
                 <BookCard
                   key={book.id}
                   title={book.volumeInfo.title}
@@ -177,29 +209,32 @@ const LibraryPage = () => {
                 />
               ))}
             </SimpleGrid>
+
             {/* Paginação */}
-            <Flex justifyContent="center" mt={6} mb={6}>
+            <Flex justify="center" mt={6} mb={6} gap={4}>
               {currentPage > 0 && (
-                <Button
-                  onClick={() => handlePageChange(currentPage - 1)}
-                  mr={2}
-                >
-                  <ArrowBackIcon /> {/* Anterior */}
+                <Button onClick={() => handlePageChange(currentPage - 1)}>
+                  <ArrowBackIcon />
                 </Button>
               )}
-              <p className="mt-2 text-white font-bold">{currentPage + 1}</p>
-              <Button onClick={() => handlePageChange(currentPage + 1)} ml={2}>
-                <ArrowForwardIcon /> {/* Próxima */}
-              </Button>
+              <Text mt={2} fontWeight="bold">
+                Página {currentPage + 1}
+              </Text>
+              {books.length >= maxResults && (
+                <Button onClick={() => handlePageChange(currentPage + 1)}>
+                  <ArrowForwardIcon />
+                </Button>
+              )}
             </Flex>
           </>
         )}
       </Box>
-      <div className="text-center mt-5">
-        <a href="/politica_de_privacidade">Politica de Privacidade</a>
+
+      <Box textAlign="center" mt={5} color="white">
+        <a href="/politica_de_privacidade">Política de Privacidade</a>
         <br />
         <a href="/termos_de_uso">Termos de Uso</a>
-      </div>
+      </Box>
     </Box>
   );
 };
